@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog y Recursos Educativos - Mario Molina | Constructor Civil</title>
+    <meta name="description" content="Recursos educativos sobre construcción civil, arquitectura, BIM y más. Aprende sobre la profesión de Constructor Civil en Argentina.">
+    
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Estilos CSS -->
+    <style>
+        /* Reset y estilos básicos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navegación */
+        nav {
+            background-color: #2c3e50;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: #3498db;
+        }
+        
+        .menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .menu li {
+            margin-left: 25px;
+        }
+        
+        .menu a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .menu a:hover {
+            color: #3498db;
+        }
+        
+        .menu .active {
+            color: #3498db;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+        }
+        
+        /* Sección Blog */
+        .blog {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .blog h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #2c3e50;
+            position: relative;
+            padding-bottom: 15px;
+            font-size: 2.5rem;
+        }
+        
+        .blog h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #3498db;
+        }
+        
+        .blog-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+        
+        /* Artículo completo */
+        .articulo-completo {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+        }
+        
+        .articulo-completo-img {
+            height: 400px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+        
+        .articulo-completo-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .articulo-completo-content {
+            padding: 40px;
+        }
+        
+        .articulo-completo-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        .articulo-completo-meta i {
+            margin-right: 5px;
+        }
+        
+        .articulo-completo-meta span {
+            margin-right: 15px;
+        }
+        
+        .categoria {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-left: 15px;
+        }
+        
+        .articulo-completo h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+        }
+        
+        .articulo-completo p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+        
+        .articulo-completo h3 {
+            color: #2c3e50;
+            margin: 30px 0 15px;
+            font-size: 1.5rem;
+        }
+        
+        .articulo-completo ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .articulo-completo li {
+            margin-bottom: 10px;
+        }
+        
+        .video-container {
+            margin: 30px 0;
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+        
+        .articulo-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 30px;
+        }
+        
+        .tag {
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .tag:hover {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .articulo-share {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .articulo-share h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .share-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .share-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .share-links a:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Artículos */
+        .articulos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .articulo-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .articulo-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .articulo-img {
+            height: 200px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+        
+        .articulo-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .articulo-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .articulo-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        .articulo-meta i {
+            margin-right: 5px;
+        }
+        
+        .articulo-meta span {
+            margin-right: 15px;
+        }
+        
+        .categoria {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        .articulo-content h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .articulo-content p {
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .read-more {
+            display: inline-block;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+            align-self: flex-start;
+        }
+        
+        .read-more:hover {
+            color: #2980b9;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+        
+        .sidebar h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .sidebar h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #3498db;
+        }
+        
+        .categorias {
+            margin-bottom: 40px;
+        }
+        
+        .categorias ul {
+            list-style: none;
+        }
+        
+        .categorias li {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .categorias li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .categorias a {
+            color: #2c3e50;
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            transition: color 0.3s;
+        }
+        
+        .categorias a:hover {
+            color: #3498db;
+        }
+        
+        .categorias .count {
+            background-color: #3498db;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+        }
+        
+        .recientes {
+            margin-bottom: 40px;
+        }
+        
+        .reciente-item {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .reciente-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 5px;
+            background-color: #ddd;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .reciente-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        .reciente-content h4 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+        
+        .reciente-content p {
+            color: #7f8c8d;
+            font-size: 0.8rem;
+        }
+        
+        .tags {
+            margin-bottom: 40px;
+        }
+        
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .newsletter {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .newsletter h3 {
+            margin-bottom: 15px;
+        }
+        
+        .newsletter p {
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .newsletter-form input {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        
+        .newsletter-form button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Paginación */
+        .paginacion {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .paginacion a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f8f9fa;
+            color: #2c3e50;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .paginacion a:hover, .paginacion a.active {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .social-links a {
+            color: #ecf0f1;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #3498db;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            color: #bdc3c7;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .blog-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: static;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+            
+            .menu {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .menu li {
+                margin: 5px 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .articulos {
+                grid-template-columns: 1fr;
+            }
+            
+            .articulo-completo-content {
+                padding: 20px;
+            }
+            
+            .articulo-completo h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navegación -->
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Mario<span>Molina</span></a>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="consultoria.html">Consultoría</a></li>
+                <li><a href="sobre-mi.html">Sobre Mí</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Blog y Recursos Educativos</h1>
+            <p>Conoce más sobre el mundo de la construcción civil, arquitectura y tecnologías BIM</p>
+        </div>
+    </section>
+
+    <!-- Sección Blog -->
+    <section class="blog">
+        <div class="container">
+            <!-- Artículo completo -->
+            <article class="articulo-completo">
+                <div class="articulo-completo-img">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Constructor Civil trabajando">
+                </div>
+                <div class="articulo-completo-content">
+                    <div class="articulo-completo-meta">
+                        <span><i class="far fa-calendar"></i> 15 Oct 2023</span>
+                        <span><i class="far fa-user"></i> Mario Molina</span>
+                        <span class="categoria">Constructor Civil</span>
+                    </div>
+                    <h1>Constructor Civil: Perfil Profesional</h1>
+                    
+                    <h3>¿Qué es un Constructor Civil?</h3>
+                    <p>El Constructor Civil (o Ingeniero Constructor, según el país) es un profesional colegiado especializado en la planificación, diseño, gestión y ejecución de proyectos de construcción. Con una formación que combina conocimientos técnicos y administrativos, con habilitación legal para diseñar, dirigir y construir viviendas, edificios e infraestructuras, con las limitaciones legales que fija cada colegio profesional y cada jurisdicción.</p>
+                    
+                    <h3>¿Dónde se estudia?</h3>
+                    <p>La carrera se imparte en universidades e institutos técnicos, con una duración de 4 a 5 años. Un ejemplo es la Carrera de Constructor en la FCEFyN de la Universidad Nacional de Córdoba, Argentina.</p>
+                    
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/lve-bmd3cKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    
+                    <p>En este video puedes conocer más sobre la Carrera de Constructor en la Facultad de Ciencias Exactas, Físicas y Naturales de la Universidad Nacional de Córdoba.</p>
+                    
+                    <h3>¿Qué puede hacer?</h3>
+                    <p>El Constructor Civil, dentro de su marco legal y competencias profesionales, puede desempeñar las siguientes actividades:</p>
+                    <ul>
+                        <li>Dirigir y supervisar obras de edificación e infraestructura.</li>
+                        <li>Gestionar proyectos, desde la planificación y diseño hasta la entrega final.</li>
+                        <li>Asegurar el cumplimiento de normativas y estándares de construcción.</li>
+                        <li>Utilizar tecnología avanzada (como AutoCAD, Revit y otros software).</li>
+                        <li>Trabajar en empresas constructoras, consultorías, sector público o como emprendedor.</li>
+                    </ul>
+                    
+                    <h3>Ámbitos de actuación profesional</h3>
+                    <p>Los Constructores Civiles pueden desempeñarse en múltiples áreas dentro de la industria de la construcción, siempre dentro del marco legal que regula su profesión:</p>
+                    <ul>
+                        <li><strong>Diseño y proyecto:</strong> Elaboración de planos arquitectónicos, cálculo estructural y especificaciones técnicas para viviendas, edificios y naves industriales, según sus competencias legales.</li>
+                        <li><strong>Dirección de obra:</strong> Supervisión y coordinación de todos los aspectos de la construcción, desde la planificación hasta la entrega final.</li>
+                        <li><strong>Peritaje y tasaciones:</strong> Evaluación técnica y económica de inmuebles para fines legales, bancarios o de seguros.</li>
+                        <li><strong>Docencia e investigación:</strong> Formación de nuevos profesionales y desarrollo de nuevas técnicas constructivas.</li>
+                        <li><strong>Consultoría:</strong> Asesoramiento a empresas y particulares en proyectos de construcción.</li>
+                    </ul>
+                    
+                    <h3>Importancia en el desarrollo urbano</h3>
+                    <p>El Constructor Civil es un pilar fundamental en el desarrollo de ciudades sostenibles y funcionales. Su formación específica le permite entender tanto los aspectos de diseño como los de ejecución, lo que lo convierte en un profesional clave para materializar proyectos que mejoren la calidad de vida de las personas.</p>
+                    <p>Su conocimiento detallado de los materiales y técnicas constructivas le permite optimizar recursos, mejorar la calidad y garantizar la seguridad de las edificaciones, contribuyendo significativamente al crecimiento ordenado y sostenible de las comunidades.</p>
+                    
+                    <div class="articulo-tags">
+                        <span class="tag">Constructor Civil</span>
+                        <span class="tag">Perfil Profesional</span>
+                        <span class="tag">Construcción</span>
+                        <span class="tag">Educación</span>
+                        <span class="tag">Universidad</span>
+                    </div>
+                    
+                    <div class="articulo-share">
+                        <h3>Compartir este artículo</h3>
+                        <div class="share-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            
+            <div class="blog-container">
+                <!-- Artículos -->
+                <div class="articulos">
+                    <article class="articulo-card">
+                        <div class="articulo-img">
+                            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="BIM en la construcción">
+                        </div>
+                        <div class="articulo-content">
+                            <div class="articulo-meta">
+                                <span><i class="far fa-calendar"></i> 10 Oct 2023</span>
+                                <span><i class="far fa-user"></i> Mario Molina</span>
+                            </div>
+                            <span class="categoria">BIM</span>
+                            <h3>La Revolución BIM en la Construcción Moderna</h3>
+                            <p>Descubre cómo la metodología BIM está transformando la industria de la construcción, mejorando la eficiencia y reduciendo costos en proyectos de todo el mundo.</p>
+                            <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    
+                    <article class="articulo-card">
+                        <div class="articulo-img">
+                            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Diseño sostenible">
+                        </div>
+                        <div class="articulo-content">
+                            <div class="articulo-meta">
+                                <span><i class="far fa-calendar"></i> 5 Oct 2023</span>
+                                <span><i class="far fa-user"></i> Mario Molina</span>
+                            </div>
+                            <span class="categoria">Sostenibilidad</span>
+                            <h3>Diseño Sostenible: El Futuro de la Arquitectura</h3>
+                            <p>Explora las tendencias y técnicas de diseño sostenible que están marcando el futuro de la arquitectura y la construcción, con un enfoque en eficiencia energética.</p>
+                            <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    
+                    <article class="articulo-card">
+                        <div class="articulo-img">
+                            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Gestión de proyectos">
+                        </div>
+                        <div class="articulo-content">
+                            <div class="articulo-meta">
+                                <span><i class="far fa-calendar"></i> 1 Oct 2023</span>
+                                <span><i class="far fa-user"></i> Mario Molina</span>
+                            </div>
+                            <span class="categoria">Gestión</span>
+                            <h3>Claves para una Gestión Eficaz de Proyectos</h3>
+                            <p>Aprende las mejores prácticas y herramientas para gestionar proyectos de construcción de manera eficiente, garantizando el cumplimiento de plazos y presupuestos.</p>
+                            <a href="#" class="read-more">Leer más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+                
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="categorias">
+                        <h3>Categorías</h3>
+                        <ul>
+                            <li><a href="#">Constructor Civil <span class="count">8</span></a></li>
+                            <li><a href="#">Arquitectura <span class="count">12</span></a></li>
+                            <li><a href="#">Ingeniería <span class="count">6</span></a></li>
+                            <li><a href="#">BIM <span class="count">5</span></a></li>
+                            <li><a href="#">Tecnología <span class="count">9</span></a></li>
+                            <li><a href="#">Sostenibilidad <span class="count">7</span></a></li>
+                            <li><a href="#">Gestión <span class="count">4</span></a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="recientes">
+                        <h3>Artículos Recientes</h3>
+                        <div class="reciente-item">
+                            <div class="reciente-img">
+                                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Artículo reciente">
+                            </div>
+                            <div class="reciente-content">
+                                <h4>Constructor Civil: Perfil Profesional</h4>
+                                <p>15 Oct 2023</p>
+                            </div>
+                        </div>
+                        <div class="reciente-item">
+                            <div class="reciente-img">
+                                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Artículo reciente">
+                            </div>
+                            <div class="reciente-content">
+                                <h4>La Revolución BIM en la Construcción</h4>
+                                <p>10 Oct 2023</p>
+                            </div>
+                        </div>
+                        <div class="reciente-item">
+                            <div class="reciente-img">
+                                <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Artículo reciente">
+                            </div>
+                            <div class="reciente-content">
+                                <h4>Diseño Sostenible: El Futuro</h4>
+                                <p>5 Oct 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tags">
+                        <h3>Etiquetas Populares</h3>
+                        <div class="tag-cloud">
+                            <a href="#" class="tag">Constructor Civil</a>
+                            <a href="#" class="tag">Arquitectura</a>
+                            <a href="#" class="tag">Construcción</a>
+                            <a href="#" class="tag">BIM</a>
+                            <a href="#" class="tag">Sostenibilidad</a>
+                            <a href="#" class="tag">Innovación</a>
+                            <a href="#" class="tag">Tecnología</a>
+                            <a href="#" class="tag">Gestión</a>
+                        </div>
+                    </div>
+                    
+                    <div class="newsletter">
+                        <h3>Suscríbete al Newsletter</h3>
+                        <p>Recibe los últimos artículos y recursos educativos directamente en tu correo electrónico.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Tu correo electrónico" required>
+                            <button type="submit">Suscribirse</button>
+                        </form>
+                    </div>
+                </aside>
+            </div>
+            
+            <!-- Paginación -->
+            <div class="paginacion">
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <p class="copyright">© 2023 Mario Molina. Todos los derechos reservados. Buenos Aires, Argentina.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
