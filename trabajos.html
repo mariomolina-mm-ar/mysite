@@ -13,7 +13,11 @@
             color: #e0e0e0; 
             line-height: 1.6;
         }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .container { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
         
         /* Navegación */
         nav { background: #1a1a1a; padding: 15px 0; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #333; }
@@ -58,7 +62,11 @@
             height: 4px;
             background-color: #3498db;
         }
-        .proyectos { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 40px; }
+        .proyectos { 
+            display: grid; 
+            grid-template-columns: 1fr; /* Siempre una columna */
+            gap: 60px; /* Más espacio entre proyectos */
+        }
         
         .proyecto {
             background: #1e1e1e; 
@@ -67,9 +75,10 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             transition: all 0.3s ease;
             border: 1px solid #2a2a2a;
+            max-width: 100%; /* Asegurar que no exceda el contenedor */
         }
         .proyecto:hover { 
-            transform: translateY(-10px);
+            transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(52, 152, 219, 0.2);
             border-color: #3498db;
         }
@@ -111,7 +120,7 @@
             transition: transform 0.5s ease;
         }
         .imagen:hover img {
-            transform: scale(1.03);
+            transform: scale(1.02);
         }
         .etiqueta { 
             background: #3498db; 
@@ -182,13 +191,14 @@
             color: #808080;
         }
         
+        /* Responsive para móviles */
         @media (max-width: 768px) {
             .nav-container { flex-direction: column; }
             .menu { margin-top: 15px; flex-wrap: wrap; justify-content: center; }
             .menu li { margin: 5px 10px; }
-            .proyectos { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2.5rem; }
             .trabajos h2 { font-size: 2rem; }
+            .proyectos { gap: 40px; } /* Menos espacio en móviles */
         }
     </style>
 </head>
@@ -226,8 +236,8 @@
                 <!-- Proyecto 1 -->
                 <div class="proyecto">
                     <div class="proyecto-info">
-                        <h3>Diseño Edificio Residencial y Comercial</h3>
-                        <p>Diseño Edificio Residencial Multifamiliar y Comercial en Punta de Este.</p>
+                        <h3>Diseño Residencial y Comercial</h3>
+                        <p>Diseño de edificio multifamiliar y comercial en Punta del Este </p>
                     </div>
                     <div class="imagenes">
                         <div class="imagen">
@@ -239,13 +249,13 @@
                         <div class="imagen">
                             <div class="contenedor">
                                 <span class="etiqueta">Render día</span>
-                                <img src="https://mariomolina-mm-ar.github.io/mysite/images/proyectos//proyecto_pe_01.webp" alt="Render día">
+                                <img src="https://mariomolina-mm-ar.github.io/mysite/images/proyectos/cproyecto_pe_01.webp" alt="Render día">
                             </div>
                         </div>
                         <div class="imagen">
                             <div class="contenedor">
                                 <span class="etiqueta">Render noche</span>
-                                <img src="https://mariomolina-mm-ar.github.io/mysite/images/proyectos//proyecto_pe_02.webp" alt="Render noche">
+                                <img src="https://mariomolina-mm-ar.github.io/mysite/images/proyectos/proyecto_pe_02.webp" alt="Render noche">
                             </div>
                         </div>
                     </div>
