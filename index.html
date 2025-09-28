@@ -86,7 +86,7 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('/images/hero-bg.jpg') no-repeat center center/cover;
             height: 100vh;
             display: flex;
             align-items: center;
@@ -334,7 +334,7 @@
         /* Sección CTA */
         .cta {
             padding: 100px 0;
-            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('/images/cta-bg.jpg') no-repeat center center/cover;
             text-align: center;
             color: white;
         }
@@ -396,6 +396,19 @@
             to {
                 opacity: 1;
                 transform: translateY(0);
+            }
+        }
+        
+        /* Soporte para WebP en imágenes de fondo */
+        @supports (background-image: url('/images/hero-bg.webp')) {
+            .hero {
+                background-image: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('/images/hero-bg.webp');
+            }
+        }
+        
+        @supports (background-image: url('/images/cta-bg.webp')) {
+            .cta {
+                background-image: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('/images/cta-bg.webp');
             }
         }
         
@@ -471,7 +484,11 @@
                     <a href="sobre-mi.html" class="btn">Conocer Mi Trayectoria</a>
                 </div>
                 <div class="resumen-img">
-                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Mario Molina trabajando">
+                    <picture>
+                        <source srcset="/images/perfil-profesional.webp" type="image/webp">
+                        <source srcset="/images/perfil-profesional.jpg" type="image/jpeg">
+                        <img src="/images/perfil-profesional.jpg" alt="Mario Molina trabajando" loading="lazy" width="500" height="333">
+                    </picture>
                 </div>
             </div>
         </div>
@@ -484,7 +501,11 @@
             <div class="servicios-grid">
                 <div class="servicio-card">
                     <div class="servicio-img">
-                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Diseño arquitectónico">
+                        <picture>
+                            <source srcset="/images/diseno-arquitectonico.webp" type="image/webp">
+                            <source srcset="/images/diseno-arquitectonico.jpg" type="image/jpeg">
+                            <img src="/images/diseno-arquitectonico.jpg" alt="Diseño arquitectónico" loading="lazy" width="400" height="267">
+                        </picture>
                     </div>
                     <div class="servicio-content">
                         <h3>Diseño Arquitectónico</h3>
@@ -495,7 +516,11 @@
                 
                 <div class="servicio-card">
                     <div class="servicio-img">
-                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Consultoría">
+                        <picture>
+                            <source srcset="/images/consultoria.webp" type="image/webp">
+                            <source srcset="/images/consultoria.jpg" type="image/jpeg">
+                            <img src="/images/consultoria.jpg" alt="Consultoría" loading="lazy" width="400" height="267">
+                        </picture>
                     </div>
                     <div class="servicio-content">
                         <h3>Consultoría Profesional</h3>
@@ -506,7 +531,11 @@
                 
                 <div class="servicio-card">
                     <div class="servicio-img">
-                        <img src="https://images.unsplash.com/photo-1581092920138-9c042ea4a9c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Gestión de proyectos">
+                        <picture>
+                            <source srcset="/images/gestion-proyectos.webp" type="image/webp">
+                            <source srcset="/images/gestion-proyectos.jpg" type="image/jpeg">
+                            <img src="/images/gestion-proyectos.jpg" alt="Gestión de proyectos" loading="lazy" width="400" height="267">
+                        </picture>
                     </div>
                     <div class="servicio-content">
                         <h3>Gestión de Proyectos</h3>
