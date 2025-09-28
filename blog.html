@@ -86,7 +86,7 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('images/diseno-arquitectonico.jpg') no-repeat center center/cover;
             height: 50vh;
             display: flex;
             align-items: center;
@@ -608,6 +608,13 @@
             color: #bdc3c7;
         }
         
+        /* Soporte para WebP en imágenes de fondo */
+        @supports (background-image: url('images/diseno-arquitectonico.webp')) {
+            .hero {
+                background-image: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('images/diseno-arquitectonico.webp');
+            }
+        }
+        
         /* Responsive */
         @media (max-width: 992px) {
             .blog-container {
@@ -676,7 +683,7 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Blog y Recursos Educativos</h1>
-            <p>Conoce más sobre el mundo de la construcción civil, arquitectura y tecnologías BIM</p>
+            <p>Conoce más sobre el mundo de la construcción civil, arquitectura y tecnologías de diseño</p>
         </div>
     </section>
 
@@ -686,7 +693,11 @@
             <!-- Artículo completo -->
             <article class="articulo-completo">
                 <div class="articulo-completo-img">
-                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Constructor Civil trabajando">
+                    <picture>
+                        <source srcset="images/diseno-arquitectonico.webp" type="image/webp">
+                        <source srcset="images/diseno-arquitectonico.jpg" type="image/jpeg">
+                        <img src="images/diseno-arquitectonico.jpg" alt="Constructor Civil trabajando" loading="lazy" width="800" height="400">
+                    </picture>
                 </div>
                 <div class="articulo-completo-content">
                     <div class="articulo-completo-meta">
@@ -757,7 +768,11 @@
                 <div class="articulos">
                     <article class="articulo-card">
                         <div class="articulo-img">
-                            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="BIM en la construcción">
+                            <picture>
+                                <source srcset="images/bim-construccion.webp" type="image/webp">
+                                <source srcset="images/bim-construccion.jpg" type="image/jpeg">
+                                <img src="images/bim-construccion.jpg" alt="BIM en la construcción" loading="lazy" width="300" height="200">
+                            </picture>
                         </div>
                         <div class="articulo-content">
                             <div class="articulo-meta">
@@ -773,7 +788,11 @@
                     
                     <article class="articulo-card">
                         <div class="articulo-img">
-                            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Diseño sostenible">
+                            <picture>
+                                <source srcset="images/diseno-sostenible.webp" type="image/webp">
+                                <source srcset="images/diseno-sostenible.jpg" type="image/jpeg">
+                                <img src="images/diseno-sostenible.jpg" alt="Diseño sostenible" loading="lazy" width="300" height="200">
+                            </picture>
                         </div>
                         <div class="articulo-content">
                             <div class="articulo-meta">
@@ -789,7 +808,11 @@
                     
                     <article class="articulo-card">
                         <div class="articulo-img">
-                            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Gestión de proyectos">
+                            <picture>
+                                <source srcset="images/gestion-proyectos.webp" type="image/webp">
+                                <source srcset="images/gestion-proyectos.jpg" type="image/jpeg">
+                                <img src="images/gestion-proyectos.jpg" alt="Gestión de proyectos" loading="lazy" width="300" height="200">
+                            </picture>
                         </div>
                         <div class="articulo-content">
                             <div class="articulo-meta">
@@ -823,7 +846,11 @@
                         <h3>Artículos Recientes</h3>
                         <div class="reciente-item">
                             <div class="reciente-img">
-                                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Artículo reciente">
+                                <picture>
+                                    <source srcset="images/diseno-arquitectonico-thumb.webp" type="image/webp">
+                                    <source srcset="images/diseno-arquitectonico-thumb.jpg" type="image/jpeg">
+                                    <img src="images/diseno-arquitectonico-thumb.jpg" alt="Artículo reciente" loading="lazy" width="80" height="80">
+                                </picture>
                             </div>
                             <div class="reciente-content">
                                 <h4>Constructor Civil: Perfil Profesional</h4>
@@ -832,7 +859,11 @@
                         </div>
                         <div class="reciente-item">
                             <div class="reciente-img">
-                                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Artículo reciente">
+                                <picture>
+                                    <source srcset="images/bim-construccion-thumb.webp" type="image/webp">
+                                    <source srcset="images/bim-construccion-thumb.jpg" type="image/jpeg">
+                                    <img src="images/bim-construccion-thumb.jpg" alt="Artículo reciente" loading="lazy" width="80" height="80">
+                                </picture>
                             </div>
                             <div class="reciente-content">
                                 <h4>La Revolución BIM en la Construcción</h4>
@@ -841,7 +872,11 @@
                         </div>
                         <div class="reciente-item">
                             <div class="reciente-img">
-                                <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Artículo reciente">
+                                <picture>
+                                    <source srcset="images/diseno-sostenible-thumb.webp" type="image/webp">
+                                    <source srcset="images/diseno-sostenible-thumb.jpg" type="image/jpeg">
+                                    <img src="images/diseno-sostenible-thumb.jpg" alt="Artículo reciente" loading="lazy" width="80" height="80">
+                                </picture>
                             </div>
                             <div class="reciente-content">
                                 <h4>Diseño Sostenible: El Futuro</h4>
