@@ -484,8 +484,11 @@
             <div class="perfil-card">
                 <div class="perfil-img">
                     <!-- Logo de la oficina de proyectos -->
-                    <!-- CAMBIO REALIZADO: Ruta relativa para el logo en la carpeta /images -->
-                    <img src="images/mm_logo_cyw.jpg" alt="Logo Oficina de Proyectos">
+                    <picture>
+                        <source srcset="images/mm_logo_cyw.webp" type="image/webp">
+                        <source srcset="images/mm_logo_cyw.jpg" type="image/jpeg">
+                        <img src="images/mm_logo_cyw.jpg" alt="Logo Oficina de Proyectos" loading="lazy" width="300" height="300">
+                    </picture>
                 </div>
                 <div class="perfil-info">
                     <h3>Mario Molina</h3>
