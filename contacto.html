@@ -84,16 +84,20 @@
             padding-bottom: 5px;
         }
         
-        /* Hero Section - Versión simplificada con JPG */
+        /* Hero Section - Versión corregida */
         .hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), 
-                        url('https://mariomolina-mm-ar.github.io/mysite/images/contacto.jpg') no-repeat center center;
-            background-size: cover;
             height: 50vh;
             display: flex;
             align-items: center;
             text-align: center;
             color: white;
+            /* Corrección: separar las propiedades de fondo */
+            background-image: 
+                linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)),
+                url('https://mariomolina-mm-ar.github.io/mysite/images/contacto.jpg');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
         
         .hero-content {
