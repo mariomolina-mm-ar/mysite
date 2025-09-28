@@ -84,47 +84,22 @@
             padding-bottom: 5px;
         }
         
-        /* Hero Section - Solución definitiva */
+        /* Hero Section - Versión simplificada con JPG */
         .hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8));
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), 
+                        url('/images/contacto.jpg') no-repeat center center;
+            background-size: cover;
             height: 50vh;
             display: flex;
             align-items: center;
             text-align: center;
             color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        /* Imagen de fondo con múltiples enfoques */
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('images/contacto.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            z-index: -1;
-            opacity: 0.7;
-        }
-        
-        /* Soporte para WebP */
-        @supports (background-image: url('images/contacto.webp')) {
-            .hero::before {
-                background-image: url('images/contacto.webp');
-            }
         }
         
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
             padding: 0 20px;
-            position: relative;
-            z-index: 1;
         }
         
         .hero h1 {
