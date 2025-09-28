@@ -275,7 +275,12 @@
             color: #bdc3c7;
         }
         
-        /* Soporte para WebP en imágenes de fondo */
+        /* Soporte para WebP en imágenes de fondo - Corregido */
+        .hero {
+            background-image: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('/images/contacto.jpg');
+        }
+        
+        /* Modern picture element approach for WebP */
         @supports (background-image: url('/images/contacto.webp')) {
             .hero {
                 background-image: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('/images/contacto.webp');
