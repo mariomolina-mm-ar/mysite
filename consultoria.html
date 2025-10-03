@@ -10,26 +10,34 @@
     <style>
         /* Variables CSS para modo claro/oscuro */
         :root {
-            --primary-color: #3498db;
-            --primary-dark: #2980b9;
-            --secondary-color: #2c3e50;
-            --text-color: #333;
-            --text-light: #ecf0f1;
+            /* Modo claro - Escalas de grises */
+            --primary-color: #6c757d;
+            --primary-dark: #495057;
+            --secondary-color: #343a40;
+            --accent-color: #6c757d;
+            --text-color: #212529;
+            --text-light: #f8f9fa;
             --bg-color: #f8f9fa;
             --card-bg: #ffffff;
-            --card-shadow: rgba(0, 0, 0, 0.05);
+            --card-shadow: rgba(0, 0, 0, 0.1);
+            --nav-bg: #343a40;
+            --nav-text: #f8f9fa;
             --transition-speed: 0.3s;
         }
         
         [data-theme="dark"] {
+            /* Modo oscuro - Estilo original */
             --primary-color: #3498db;
             --primary-dark: #2980b9;
-            --secondary-color: #ecf0f1; /* Corregido: ahora es claro para modo oscuro */
+            --secondary-color: #2c3e50;
+            --accent-color: #3498db;
             --text-color: #ecf0f1;
             --text-light: #bdc3c7;
             --bg-color: #1a1a1a;
             --card-bg: #2c3e50;
-            --card-shadow: rgba(0, 0, 0, 0.2);
+            --card-shadow: rgba(0, 0, 0, 0.3);
+            --nav-bg: #2c3e50;
+            --nav-text: #ecf0f1;
         }
         
         /* Reset y estilos básicos */
@@ -55,7 +63,7 @@
         
         /* Navegación */
         nav {
-            background-color: var(--secondary-color);
+            background-color: var(--nav-bg);
             padding: 15px 0;
             box-shadow: 0 2px 10px var(--card-shadow);
             position: sticky;
@@ -73,7 +81,7 @@
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
-            color: var(--text-light);
+            color: var(--nav-text);
             text-decoration: none;
             transition: color var(--transition-speed);
         }
@@ -92,7 +100,7 @@
         }
         
         .menu a {
-            color: var(--text-light);
+            color: var(--nav-text);
             text-decoration: none;
             font-weight: 500;
             transition: color var(--transition-speed);
@@ -112,7 +120,7 @@
         .theme-toggle {
             background: none;
             border: none;
-            color: var(--text-light);
+            color: var(--nav-text);
             cursor: pointer;
             font-size: 1.2rem;
             padding: 5px;
@@ -126,7 +134,7 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('images/consultoria.jpg') no-repeat center center/cover;
+            background: linear-gradient(rgba(52, 73, 94, 0.8), rgba(52, 73, 94, 0.8)), url('images/consultoria.jpg') no-repeat center center/cover;
             height: 60vh;
             display: flex;
             align-items: center;
@@ -137,7 +145,7 @@
         /* Soporte para WebP en imágenes de fondo */
         @supports (background-image: url('images/consultoria.webp')) {
             .hero {
-                background-image: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('images/consultoria.webp');
+                background-image: linear-gradient(rgba(52, 73, 94, 0.8), rgba(52, 73, 94, 0.8)), url('images/consultoria.webp');
             }
         }
         
@@ -444,7 +452,7 @@
         /* Sección CTA */
         .cta {
             padding: 100px 0;
-            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('images/cta-bg.jpg') no-repeat center center/cover;
+            background: linear-gradient(rgba(52, 73, 94, 0.8), rgba(52, 73, 94, 0.8)), url('images/cta-bg.jpg') no-repeat center center/cover;
             text-align: center;
             color: white;
         }
@@ -452,7 +460,7 @@
         /* Soporte para WebP en imágenes de fondo */
         @supports (background-image: url('images/cta-bg.webp')) {
             .cta {
-                background-image: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('images/cta-bg.webp');
+                background-image: linear-gradient(rgba(52, 73, 94, 0.8), rgba(52, 73, 94, 0.8)), url('images/cta-bg.webp');
             }
         }
         
@@ -471,8 +479,8 @@
         
         /* Footer */
         footer {
-            background-color: var(--secondary-color);
-            color: var(--text-light);
+            background-color: var(--nav-bg);
+            color: var(--nav-text);
             padding: 40px 0;
             text-align: center;
             transition: background-color var(--transition-speed);
@@ -491,7 +499,7 @@
         }
         
         .social-links a {
-            color: var(--text-light);
+            color: var(--nav-text);
             font-size: 1.5rem;
             transition: color var(--transition-speed);
         }
@@ -502,8 +510,9 @@
         
         .copyright {
             font-size: 0.9rem;
-            color: var(--text-light);
+            color: var(--nav-text);
             transition: color var(--transition-speed);
+            opacity: 0.8;
         }
         
         /* Iconos SVG personalizados */
