@@ -126,12 +126,19 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600"><rect fill="%23333" width="1200" height="600"/><path fill="%23555" d="M0,300 L300,100 L600,350 L900,150 L1200,300 L1200,600 L0,600 Z"/></svg>') no-repeat center center/cover;
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('images/hero-bg.jpg') no-repeat center center/cover;
             height: 50vh;
             display: flex;
             align-items: center;
             text-align: center;
             color: white;
+        }
+        
+        /* Soporte para WebP en imágenes de fondo */
+        @supports (background-image: url('images/hero-bg.webp')) {
+            .hero {
+                background-image: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('images/hero-bg.webp');
+            }
         }
         
         .hero-content {
@@ -394,9 +401,16 @@
         /* Sección CTA */
         .cta {
             padding: 100px 0;
-            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600"><rect fill="%23333" width="1200" height="600"/><path fill="%23555" d="M0,300 L300,100 L600,350 L900,150 L1200,300 L1200,600 L0,600 Z"/></svg>') no-repeat center center/cover;
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('images/cta-bg.jpg') no-repeat center center/cover;
             text-align: center;
             color: white;
+        }
+        
+        /* Soporte para WebP en imágenes de fondo */
+        @supports (background-image: url('images/cta-bg.webp')) {
+            .cta {
+                background-image: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('images/cta-bg.webp');
+            }
         }
         
         .cta h2 {
