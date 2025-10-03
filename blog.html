@@ -12,6 +12,7 @@
         :root {
             --bg-color: #f8f9fa;
             --text-color: #333;
+            --title-color: #2c3e50; /* <-- NUEVA VARIABLE PARA TÍTULOS EN MODO CLARO */
             --card-bg: white;
             --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             --nav-bg: #2c3e50;
@@ -30,6 +31,7 @@
         [data-theme="dark"] {
             --bg-color: #1a1a1a;
             --text-color: #e0e0e0;
+            --title-color: #f0f0f0; /* <-- NUEVA VARIABLE PARA TÍTULOS EN MODO OSCURO */
             --card-bg: #2d2d2d;
             --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             --nav-bg: #1a1a1a;
@@ -173,7 +175,7 @@
         .blog h2 {
             text-align: center;
             margin-bottom: 50px;
-            color: var(--secondary-color);
+            color: var(--title-color); /* <-- CAMBIO AQUÍ */
             position: relative;
             padding-bottom: 15px;
             font-size: 2.5rem;
@@ -198,7 +200,7 @@
         .section-title {
             text-align: center;
             margin-bottom: 40px;
-            color: var(--secondary-color);
+            color: var(--title-color); /* <-- CAMBIO AQUÍ */
             position: relative;
             padding-bottom: 15px;
             font-size: 2rem;
@@ -256,7 +258,7 @@
         }
         
         .perfil-title {
-            color: var(--secondary-color);
+            color: var(--title-color); /* <-- CAMBIO AQUÍ */
             margin-bottom: 15px;
             font-size: 1.5rem;
         }
@@ -329,7 +331,7 @@
         }
         
         .modal-title {
-            color: var(--secondary-color);
+            color: var(--title-color); /* <-- CAMBIO AQUÍ */
             font-size: 2rem;
         }
         
@@ -338,7 +340,7 @@
         }
         
         .modal-section h3 {
-            color: var(--primary-color);
+            color: var(--title-color); /* <-- CAMBIO AQUÍ */
             margin-bottom: 10px;
             font-size: 1.3rem;
         }
@@ -629,7 +631,7 @@
                     },
                     {
                         title: 'Video relacionado',
-                        content: '<div class="video-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/kK3A8i1m3I8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>'
+                        content: '<div class="video-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/-L1KcItYbLQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>'
                     },
                     {
                         title: '¿Dónde se estudia?',
@@ -685,7 +687,7 @@
                 sections: [
                     {
                         title: '¿Qué hace este profesional?',
-                        content: 'Un especialista en software open source para la construcción es un profesional que domina herramientas de código abierto aplicadas al diseño, modelado y gestión de proyectos de construcción. Este profesional es capaz de implementar soluciones tecnológicas basadas en software libre, reducir costos de licencias y adaptar herramientas a las necesidades específicas de cada proyecto.'
+                        content: 'Un especialista en software open source para la construcción es un profesional que domina herramientas de código abierto aplicadas al diseño, modelado y gestión de proyectos de construcción. Este profesional es capaz de implementar soluciones tecnológicas basadas en software libre, reducir costos de licencias y adaptar herramientas a las necesidades específicas de cada proyecto, todo ello sobre una base de sistemas operativos robustos y eficientes.'
                     },
                     {
                         title: 'Video relacionado',
@@ -693,15 +695,44 @@
                     },
                     {
                         title: '¿Dónde se estudia?',
-                        content: 'No existe una carrera formal específica, pero se adquieren conocimientos a través de cursos, tutoriales y comunidades en línea. La formación suele ser autodidacta o a través de workshops especializados. Muchos profesionales provienen de carreras como Arquitectura, Ingeniería Civil o Diseño Industrial y complementan su formación con aprendizaje de software específico.'
+                        content: 'No existe una carrera formal específica, pero se adquieren conocimientos a través de cursos, tutoriales y comunidades en línea. La formación suele ser autodidacta o a través de workshops especializados. Muchos profesionales provienen de carreras como Arquitectura, Ingeniería Civil o Diseño Industrial y complementan su formación con aprendizaje de software específico y sistemas operativos.'
                     },
                     {
                         title: '¿Qué puede hacer?',
-                        content: '<ul><li>Implementar flujos de trabajo basados en herramientas open source.</li><li>Desarrollar personalizaciones y plugins para software existente.</li><li>Capacitar a equipos en el uso de herramientas de código abierto.</li><li>Integrar diferentes aplicaciones open source en un ecosistema coherente.</li><li>Asesorar en la transición desde software comercial a soluciones open source.</li><li>Colaborar en comunidades de desarrollo de software.</li></ul>'
+                        content: '<ul><li>Implementar flujos de trabajo basados en herramientas open source.</li><li>Desarrollar personalizaciones y plugins para software existente.</li><li>Capacitar a equipos en el uso de herramientas de código abierto.</li><li>Integrar diferentes aplicaciones open source en un ecosistema coherente.</li><li>Asesorar en la transición desde software comercial a soluciones open source.</li><li>Administrar y mantener sistemas operativos GNU/Linux para entornos de trabajo.</li><li>Colaborar en comunidades de desarrollo de software.</li></ul>'
                     },
                     {
                         title: 'Herramientas principales',
-                        content: '<ul><li><strong>QCAD:</strong> Diseño asistido por computadora 2D.</li><li><strong>QGIS:</strong> Sistema de información geográfica para análisis espacial.</li><li><strong>FreeCAD:</strong> Modelado 3D paramétrico para ingeniería.</li><li><strong>Blender:</strong> Modelado 3D, animación y renderizado.</li><li><strong>OpenBIM:</strong> Estándares y herramientas para modelado de información de construcción.</li><li><strong>FreeProject:</strong> Gestión de proyectos y planificación.</li><li><strong>LibreOffice Calc:</strong> Hojas de cálculo para análisis y presupuestos.</li></ul>'
+                        content: `
+                            <p>El ecosistema de software open source es amplio y robusto, abarcando desde el sistema operativo hasta aplicaciones especializadas.</p>
+                            <ul>
+                                <li><strong>Sistema Operativo:</strong> GNU/Linux, con especial énfasis en la rama <strong>Debian</strong>, valorada por su estabilidad, seguridad y excelente gestión de recursos, ideal para entornos de trabajo exigentes.</li>
+                                <li><strong>Diseño y Modelado:</strong>
+                                    <ul>
+                                        <li><strong>QCAD:</strong> Diseño asistido por computadora 2D.</li>
+                                        <li><strong>FreeCAD:</strong> Modelado 3D paramétrico para ingeniería.</li>
+                                        <li><strong>Blender:</strong> Modelado 3D, animación y renderizado de alta calidad.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Sistemas de Información Geográfica (SIG):</strong>
+                                    <ul>
+                                        <li><strong>QGIS:</strong> Lider en el análisis y visualización de datos geoespaciales.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Diseño Gráfico y Edición de Imágenes:</strong>
+                                    <ul>
+                                        <li><strong>GIMP:</strong> Manipulación y edición de imágenes, alternativa a Photoshop.</li>
+                                        <li><strong>Krita:</strong> Especializado en pintura digital y concepto art.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Productividad y Oficina:</strong>
+                                    <ul>
+                                        <li><strong>LibreOffice Suite:</strong> Paquete completo (Writer, Calc, Impress) para documentos, hojas de cálculo y presentaciones.</li>
+                                        <li><strong>FreeProject:</strong> Gestión de proyectos y planificación.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        `
                     },
                     {
                         title: 'Importancia en el desarrollo urbano',
