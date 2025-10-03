@@ -1,798 +1,798 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog y Recursos Educativos - Mario Molina | Diseñador AEC y Constructor Civil</title>
-    <meta name="description" content="Recursos educativos sobre construcción civil, arquitectura, BIM, diseño AEC y más. Aprende sobre diferentes perfiles profesionales en el sector de la construcción.">
-    
-    <!-- Estilos CSS -->
-    <style>
-        /* Variables CSS para modo claro y oscuro */
-        :root {
-            --bg-color: #f8f9fa;
-            --text-color: #333;
-            --title-color: #2c3e50; /* <-- NUEVA VARIABLE PARA TÍTULOS EN MODO CLARO */
-            --card-bg: white;
-            --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            --nav-bg: #2c3e50;
-            --nav-text: #ecf0f1;
-            --nav-active: #3498db;
-            --primary-color: #3498db;
-            --secondary-color: #2c3e50;
-            --accent-color: #e74c3c;
-            --border-color: #ddd;
-            --hover-bg: #f1f1f1;
-            --footer-bg: #2c3e50;
-            --footer-text: #ecf0f1;
-            --transition: all 0.3s ease;
-        }
-        
-        [data-theme="dark"] {
-            --bg-color: #1a1a1a;
-            --text-color: #e0e0e0;
-            --title-color: #f0f0f0; /* <-- NUEVA VARIABLE PARA TÍTULOS EN MODO OSCURO */
-            --card-bg: #2d2d2d;
-            --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            --nav-bg: #1a1a1a;
-            --nav-text: #e0e0e0;
-            --nav-active: #3498db;
-            --primary-color: #3498db;
-            --secondary-color: #1a1a1a;
-            --accent-color: #e74c3c;
-            --border-color: #444;
-            --hover-bg: #333;
-            --footer-bg: #121212;
-            --footer-text: #e0e0e0;
-            --transition: all 0.3s ease;
-        }
-        
-        /* Reset y estilos básicos */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            transition: var(--transition);
-        }
-        
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Navegación */
-        nav {
-            background-color: var(--nav-bg);
-            padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--nav-text);
-            text-decoration: none;
-        }
-        
-        .logo span {
-            color: var(--nav-active);
-        }
-        
-        .menu {
-            display: flex;
-            list-style: none;
-        }
-        
-        .menu li {
-            margin-left: 25px;
-        }
-        
-        .menu a {
-            color: var(--nav-text);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .menu a:hover {
-            color: var(--nav-active);
-        }
-        
-        .menu .active {
-            color: var(--nav-active);
-            border-bottom: 2px solid var(--nav-active);
-            padding-bottom: 5px;
-        }
-        
-        /* Botón de cambio de tema */
-        .theme-toggle {
-            background: none;
-            border: none;
-            color: var(--nav-text);
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-        
-        .theme-toggle:hover {
-            transform: rotate(20deg);
-        }
-        
-        /* Hero Section */
-        .hero {
-            background-image: 
-                linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)),
-                url('https://mariomolina-mm-ar.github.io/mysite/images/diseno-arquitectonico.jpg');
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            height: 50vh;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: white;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-        
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-        }
-        
-        /* Sección Blog */
-        .blog {
-            padding: 80px 0;
-            background-color: var(--bg-color);
-        }
-        
-        .blog h2 {
-            text-align: center;
-            margin-bottom: 50px;
-            color: var(--title-color); /* <-- CAMBIO AQUÍ */
-            position: relative;
-            padding-bottom: 15px;
-            font-size: 2.5rem;
-        }
-        
-        .blog h2:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--primary-color);
-        }
-        
-        /* Sección de perfiles profesionales */
-        .perfiles-section {
-            margin-bottom: 60px;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            color: var(--title-color); /* <-- CAMBIO AQUÍ */
-            position: relative;
-            padding-bottom: 15px;
-            font-size: 2rem;
-        }
-        
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background-color: var(--primary-color);
-        }
-        
-        .perfiles-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-        
-        .perfil-card {
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .perfil-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .perfil-img {
-            height: 200px;
-            background-color: var(--border-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-            overflow: hidden;
-        }
-        
-        .perfil-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .perfil-content {
-            padding: 20px;
-        }
-        
-        .perfil-title {
-            color: var(--title-color); /* <-- CAMBIO AQUÍ */
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-        }
-        
-        .perfil-description {
-            margin-bottom: 20px;
-            font-size: 1rem;
-            text-align: justify;
-        }
-        
-        .perfil-btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: background-color 0.3s;
-        }
-        
-        .perfil-btn:hover {
-            background-color: #2980b9;
-        }
-        
-        /* Modal para detalles del perfil */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: 1000;
-            overflow-y: auto;
-        }
-        
-        .modal-content {
-            background-color: var(--card-bg);
-            margin: 5% auto;
-            padding: 30px;
-            width: 90%;
-            max-width: 800px;
-            border-radius: 10px;
-            position: relative;
-        }
-        
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 2rem;
-            cursor: pointer;
-            color: var(--text-color);
-        }
-        
-        .modal-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .modal-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 20px;
-        }
-        
-        .modal-title {
-            color: var(--title-color); /* <-- CAMBIO AQUÍ */
-            font-size: 2rem;
-        }
-        
-        .modal-section {
-            margin-bottom: 25px;
-        }
-        
-        .modal-section h3 {
-            color: var(--title-color); /* <-- CAMBIO AQUÍ */
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-        }
-        
-        .modal-section p, .modal-section ul {
-            margin-bottom: 15px;
-        }
-        
-        .modal-section ul {
-            margin-left: 20px;
-        }
-        
-        .modal-section li {
-            margin-bottom: 8px;
-        }
-        
-        .video-container {
-            margin: 20px 0;
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            overflow: hidden;
-        }
-        
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 10px;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--footer-bg);
-            color: var(--footer-text);
-            padding: 40px 0;
-            text-align: center;
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .social-links a {
-            color: var(--footer-text);
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-        
-        .social-links a:hover {
-            color: var(--primary-color);
-        }
-        
-        .copyright {
-            font-size: 0.9rem;
-            color: #bdc3c7;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-            }
-            
-            .menu {
-                margin-top: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .menu li {
-                margin: 5px 10px;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.2rem;
-            }
-            
-            .modal-header {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .modal-img {
-                margin-right: 0;
-                margin-bottom: 15px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog y Recursos Educativos - Mario Molina | Diseñador AEC y Constructor Civil</title>
+<meta name="description" content="Recursos educativos sobre construcción civil, arquitectura, BIM, diseño AEC y más. Aprende sobre diferentes perfiles profesionales en el sector de la construcción.">
+
+<!-- Estilos CSS -->
+<style>
+/* Variables CSS para modo claro y oscuro */
+:root {
+--bg-color: #f8f9fa;
+--text-color: #333;
+--title-color: #2c3e50; /* <-- NUEVA VARIABLE PARA TÍTULOS EN MODO CLARO */
+--card-bg: white;
+--card-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+--nav-bg: #2c3e50;
+--nav-text: #ecf0f1;
+--nav-active: #3498db;
+--primary-color: #3498db;
+--secondary-color: #2c3e50;
+--accent-color: #e74c3c;
+--border-color: #ddd;
+--hover-bg: #f1f1f1;
+--footer-bg: #2c3e50;
+--footer-text: #ecf0f1;
+--transition: all 0.3s ease;
+}
+
+[data-theme="dark"] {
+--bg-color: #1a1a1a;
+--text-color: #e0e0e0;
+--title-color: #f0f0f0; /* <-- NUEVA VARIABLE PARA TÍTULOS EN MODO OSCURO */
+--card-bg: #2d2d2d;
+--card-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+--nav-bg: #1a1a1a;
+--nav-text: #e0e0e0;
+--nav-active: #3498db;
+--primary-color: #3498db;
+--secondary-color: #1a1a1a;
+--accent-color: #e74c3c;
+--border-color: #444;
+--hover-bg: #333;
+--footer-bg: #121212;
+--footer-text: #e0e0e0;
+--transition: all 0.3s ease;
+}
+
+/* Reset y estilos básicos */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+transition: var(--transition);
+}
+
+body {
+background-color: var(--bg-color);
+color: var(--text-color);
+line-height: 1.6;
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+}
+
+/* Navegación */
+nav {
+background-color: var(--nav-bg);
+padding: 15px 0;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+position: sticky;
+top: 0;
+z-index: 100;
+}
+
+.nav-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.logo {
+font-size: 1.8rem;
+font-weight: bold;
+color: var(--nav-text);
+text-decoration: none;
+}
+
+.logo span {
+color: var(--nav-active);
+}
+
+.menu {
+display: flex;
+list-style: none;
+}
+
+.menu li {
+margin-left: 25px;
+}
+
+.menu a {
+color: var(--nav-text);
+text-decoration: none;
+font-weight: 500;
+transition: color 0.3s;
+}
+
+.menu a:hover {
+color: var(--nav-active);
+}
+
+.menu .active {
+color: var(--nav-active);
+border-bottom: 2px solid var(--nav-active);
+padding-bottom: 5px;
+}
+
+/* Botón de cambio de tema */
+.theme-toggle {
+background: none;
+border: none;
+color: var(--nav-text);
+font-size: 1.5rem;
+cursor: pointer;
+transition: transform 0.3s;
+}
+
+.theme-toggle:hover {
+transform: rotate(20deg);
+}
+
+/* Hero Section */
+.hero {
+background-image:
+linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)),
+url('https://mariomolina-mm-ar.github.io/mysite/images/diseno-arquitectonico.jpg');
+background-position: center center;
+background-repeat: no-repeat;
+background-size: cover;
+height: 50vh;
+display: flex;
+align-items: center;
+text-align: center;
+color: white;
+}
+
+.hero-content {
+max-width: 800px;
+margin: 0 auto;
+padding: 0 20px;
+}
+
+.hero h1 {
+font-size: 3rem;
+margin-bottom: 20px;
+}
+
+.hero p {
+font-size: 1.3rem;
+margin-bottom: 30px;
+}
+
+/* Sección Blog */
+.blog {
+padding: 80px 0;
+background-color: var(--bg-color);
+}
+
+.blog h2 {
+text-align: center;
+margin-bottom: 50px;
+color: var(--title-color); /* <-- CAMBIO AQUÍ */
+position: relative;
+padding-bottom: 15px;
+font-size: 2.5rem;
+}
+
+.blog h2:after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+width: 80px;
+height: 4px;
+background-color: var(--primary-color);
+}
+
+/* Sección de perfiles profesionales */
+.perfiles-section {
+margin-bottom: 60px;
+}
+
+.section-title {
+text-align: center;
+margin-bottom: 40px;
+color: var(--title-color); /* <-- CAMBIO AQUÍ */
+position: relative;
+padding-bottom: 15px;
+font-size: 2rem;
+}
+
+.section-title:after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+width: 60px;
+height: 3px;
+background-color: var(--primary-color);
+}
+
+.perfiles-container {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+gap: 30px;
+margin-bottom: 40px;
+}
+
+.perfil-card {
+background-color: var(--card-bg);
+border-radius: 10px;
+overflow: hidden;
+box-shadow: var(--card-shadow);
+transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.perfil-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.perfil-img {
+height: 200px;
+background-color: var(--border-color);
+display: flex;
+align-items: center;
+justify-content: center;
+color: #999;
+overflow: hidden;
+}
+
+.perfil-img img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.perfil-content {
+padding: 20px;
+}
+
+.perfil-title {
+color: var(--title-color); /* <-- CAMBIO AQUÍ */
+margin-bottom: 15px;
+font-size: 1.5rem;
+}
+
+.perfil-description {
+margin-bottom: 20px;
+font-size: 1rem;
+text-align: justify;
+}
+
+.perfil-btn {
+display: inline-block;
+background-color: var(--primary-color);
+color: white;
+padding: 8px 16px;
+border-radius: 5px;
+text-decoration: none;
+font-weight: 500;
+transition: background-color 0.3s;
+}
+
+.perfil-btn:hover {
+background-color: #2980b9;
+}
+
+/* Modal para detalles del perfil */
+.modal {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.7);
+z-index: 1000;
+overflow-y: auto;
+}
+
+.modal-content {
+background-color: var(--card-bg);
+margin: 5% auto;
+padding: 30px;
+width: 90%;
+max-width: 800px;
+border-radius: 10px;
+position: relative;
+}
+
+.close-modal {
+position: absolute;
+top: 15px;
+right: 20px;
+font-size: 2rem;
+cursor: pointer;
+color: var(--text-color);
+}
+
+.modal-header {
+display: flex;
+align-items: center;
+margin-bottom: 20px;
+}
+
+.modal-img {
+width: 150px;
+height: 150px;
+border-radius: 50%;
+object-fit: cover;
+margin-right: 20px;
+}
+
+.modal-title {
+color: var(--title-color); /* <-- CAMBIO AQUÍ */
+font-size: 2rem;
+}
+
+.modal-section {
+margin-bottom: 25px;
+}
+
+.modal-section h3 {
+color: var(--title-color); /* <-- CAMBIO AQUÍ */
+margin-bottom: 10px;
+font-size: 1.3rem;
+}
+
+.modal-section p, .modal-section ul {
+margin-bottom: 15px;
+}
+
+.modal-section ul {
+margin-left: 20px;
+}
+
+.modal-section li {
+margin-bottom: 8px;
+}
+
+.video-container {
+margin: 20px 0;
+position: relative;
+padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+height: 0;
+overflow: hidden;
+}
+
+.video-container iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+border-radius: 10px;
+}
+
+/* Footer */
+footer {
+background-color: var(--footer-bg);
+color: var(--footer-text);
+padding: 40px 0;
+text-align: center;
+}
+
+.footer-content {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.social-links {
+display: flex;
+gap: 20px;
+margin-bottom: 20px;
+}
+
+.social-links a {
+color: var(--footer-text);
+font-size: 1.5rem;
+transition: color 0.3s;
+}
+
+.social-links a:hover {
+color: var(--primary-color);
+}
+
+.copyright {
+font-size: 0.9rem;
+color: #bdc3c7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+.nav-container {
+flex-direction: column;
+}
+
+.menu {
+margin-top: 15px;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.menu li {
+margin: 5px 10px;
+}
+
+.hero h1 {
+font-size: 2.5rem;
+}
+
+.hero p {
+font-size: 1.2rem;
+}
+
+.modal-header {
+flex-direction: column;
+text-align: center;
+}
+
+.modal-img {
+margin-right: 0;
+margin-bottom: 15px;
+}
+}
+</style>
 </head>
 <body>
-    <!-- Navegación -->
-    <nav>
-        <div class="container nav-container">
-            <a href="index.html" class="logo">Mario<span>Molina</span></a>
-            <ul class="menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="consultoria.html">Consultoría</a></li>
-                <li><a href="sobre-mi.html">Sobre Mí</a></li>
-                <li><a href="proyectos.html">Proyectos</a></li>
-                <li><a href="blog.html" class="active">Blog</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><button class="theme-toggle" id="theme-toggle">🌙</button></li>
-            </ul>
-        </div>
-    </nav>
+<!-- Navegación -->
+<nav>
+<div class="container nav-container">
+<a href="index.html" class="logo">Mario<span>Molina</span></a>
+<ul class="menu">
+<li><a href="index.html">Inicio</a></li>
+<li><a href="servicios.html">Servicios</a></li>
+<li><a href="consultoria.html">Consultoría</a></li>
+<li><a href="sobre-mi.html">Sobre Mí</a></li>
+<li><a href="proyectos.html">Proyectos</a></li>
+<li><a href="blog.html" class="active">Blog</a></li>
+<li><a href="contacto.html">Contacto</a></li>
+<li><button class="theme-toggle" id="theme-toggle">🌙</button></li>
+</ul>
+</div>
+</nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Blog y Recursos Educativos</h1>
-            <p>Conoce más sobre el mundo de la construcción civil, arquitectura y tecnologías de diseño</p>
-        </div>
-    </section>
+<!-- Hero Section -->
+<section class="hero">
+<div class="hero-content">
+<h1>Blog y Recursos Educativos</h1>
+<p>Conoce más sobre el mundo de la construcción civil, arquitectura y tecnologías de diseño</p>
+</div>
+</section>
 
-    <!-- Sección Blog -->
-    <section class="blog">
-        <div class="container">
-            <!-- Sección de perfiles profesionales -->
-            <div class="perfiles-section">
-                <h2 class="section-title">Perfiles Profesionales en Construcción</h2>
-                
-                <div class="perfiles-container">
-                    <!-- Perfil 1: Constructor Civil -->
-                    <div class="perfil-card">
-                        <div class="perfil-img">
-                            <img src="https://mariomolina-mm-ar.github.io/mysite/images/constructor_civil.jpg" alt="Constructor Civil" loading="lazy">
-                        </div>
-                        <div class="perfil-content">
-                            <h3 class="perfil-title">Constructor Civil</h3>
-                            <p class="perfil-description">Profesional especializado en la planificación, diseño, gestión y ejecución de proyectos de construcción.</p>
-                            <a href="#" class="perfil-btn" data-perfil="constructor-civil">Ver más</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Perfil 2: Profesional en SIG/GIS -->
-                    <div class="perfil-card">
-                        <div class="perfil-img">
-                            <img src="https://mariomolina-mm-ar.github.io/mysite/images/mapa_mundo.jpg" alt="Profesional en SIG/GIS" loading="lazy">
-                        </div>
-                        <div class="perfil-content">
-                            <h3 class="perfil-title">Profesional en SIG/GIS</h3>
-                            <p class="perfil-description">Experto en sistemas de información geográfica aplicados a la planificación y gestión territorial.</p>
-                            <a href="#" class="perfil-btn" data-perfil="sig-gis">Ver más</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Perfil 3: Topografía con Drones -->
-                    <div class="perfil-card">
-                        <div class="perfil-img">
-                            <img src="https://picsum.photos/seed/drone-surveying/400/200.jpg" alt="Topografía con Drones" loading="lazy">
-                        </div>
-                        <div class="perfil-content">
-                            <h3 class="perfil-title">Topografía con Drones</h3>
-                            <p class="perfil-description">Especialista en levantamientos topográficos utilizando tecnología de drones para mayor precisión y eficiencia.</p>
-                            <a href="#" class="perfil-btn" data-perfil="topografia-drones">Ver más</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Perfil 4: Software Open Source -->
-                    <div class="perfil-card">
-                        <div class="perfil-img">
-                            <img src="https://picsum.photos/seed/open-source-software/400/200.jpg" alt="Software Open Source" loading="lazy">
-                        </div>
-                        <div class="perfil-content">
-                            <h3 class="perfil-title">Software Open Source</h3>
-                            <p class="perfil-description">Experto en herramientas de diseño y construcción de código abierto aplicadas a proyectos de ingeniería.</p>
-                            <a href="#" class="perfil-btn" data-perfil="software-opensource">Ver más</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Sección Blog -->
+<section class="blog">
+<div class="container">
+<!-- Sección de perfiles profesionales -->
+<div class="perfiles-section">
+<h2 class="section-title">Perfiles Profesionales en Construcción</h2>
 
-    <!-- Modal para detalles del perfil -->
-    <div class="modal" id="perfil-modal">
-        <div class="modal-content">
-            <span class="close-modal" id="close-modal">&times;</span>
-            <div class="modal-header">
-                <img class="modal-img" id="modal-img" src="" alt="">
-                <h2 class="modal-title" id="modal-title"></h2>
-            </div>
-            
-            <div id="modal-body">
-                <!-- El contenido se cargará dinámicamente -->
-            </div>
-        </div>
-    </div>
+<div class="perfiles-container">
+<!-- Perfil 1: Constructor Civil -->
+<div class="perfil-card">
+<div class="perfil-img">
+<img src="https://mariomolina-mm-ar.github.io/mysite/images/constructor_civil.jpg" alt="Constructor Civil" loading="lazy">
+</div>
+<div class="perfil-content">
+<h3 class="perfil-title">Constructor Civil</h3>
+<p class="perfil-description">Profesional especializado en la planificación, diseño, gestión y ejecución de proyectos de construcción.</p>
+<a href="#" class="perfil-btn" data-perfil="constructor-civil">Ver más</a>
+</div>
+</div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="social-links">
-                    <a href="#">🔗</a>
-                    <a href="#">📘</a>
-                    <a href="#">📷</a>
-                    <a href="#">🐦</a>
-                </div>
-                <p class="copyright">© 2023 Mario Molina. Todos los derechos reservados. Buenos Aires, Argentina.</p>
-            </div>
-        </div>
-    </footer>
+<!-- Perfil 2: Profesional en SIG/GIS -->
+<div class="perfil-card">
+<div class="perfil-img">
+<img src="https://mariomolina-mm-ar.github.io/mysite/images/mapa_mundo.jpg" alt="Profesional en SIG/GIS" loading="lazy">
+</div>
+<div class="perfil-content">
+<h3 class="perfil-title">Profesional en SIG/GIS</h3>
+<p class="perfil-description">Experto en sistemas de información geográfica aplicados a la planificación y gestión territorial.</p>
+<a href="#" class="perfil-btn" data-perfil="sig-gis">Ver más</a>
+</div>
+</div>
 
-    <script>
-        // Cambio de tema (modo oscuro/claro)
-        const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
-        
-        // Verificar si hay un tema guardado en localStorage
-        const currentTheme = localStorage.getItem('theme');
-        if (currentTheme) {
-            body.setAttribute('data-theme', currentTheme);
-            themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
-        }
-        
-        themeToggle.addEventListener('click', () => {
-            const theme = body.getAttribute('data-theme');
-            const newTheme = theme === 'dark' ? 'light' : 'dark';
-            
-            body.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
-        });
-        
-        // Modal para detalles del perfil
-        const modal = document.getElementById('perfil-modal');
-        const modalImg = document.getElementById('modal-img');
-        const modalTitle = document.getElementById('modal-title');
-        const modalBody = document.getElementById('modal-body');
-        const closeModal = document.getElementById('close-modal');
-        
-        // Datos de los perfiles profesionales
-        const perfilesData = {
-            'constructor-civil': {
-                img: 'https://mariomolina-mm-ar.github.io/mysite/images/constructor_civil.jpg',
-                title: 'Constructor Civil',
-                sections: [
-                    {
-                        title: '¿Qué hace este profesional?',
-                        content: 'El Constructor Civil (o Ingeniero Constructor, según el país) es un profesional colegiado especializado en la planificación, diseño, gestión y ejecución de proyectos de construcción. Con una formación que combina conocimientos técnicos y administrativos, con habilitación legal para diseñar, dirigir y construir viviendas, edificios e infraestructuras, con las limitaciones legales que fija cada colegio profesional y cada jurisdicción.'
-                    },
-                    {
-                        title: 'Video relacionado',
-                        content: '<div class="video-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/lve-bmd3cKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>'
-                    },
-                    {
-                        title: '¿Dónde se estudia?',
-                        content: 'La carrera se imparte en universidades e institutos técnicos, con una duración de 4 a 5 años. Un ejemplo es la Carrera de Constructor en la FCEFyN de la Universidad Nacional de Córdoba, Argentina.'
-                    },
-                    {
-                        title: '¿Qué puede hacer?',
-                        content: '<ul><li>Dirigir y supervisar obras de edificación e infraestructura.</li><li>Gestionar proyectos, desde la planificación y diseño hasta la entrega final.</li><li>Asegurar el cumplimiento de normativas y estándares de construcción.</li><li>Utilizar tecnología avanzada (como AutoCAD, Revit y otros software).</li><li>Trabajar en empresas constructoras, consultorías, sector público o como emprendedor.</li></ul>'
-                    },
-                    {
-                        title: 'Ámbitos de actuación profesional',
-                        content: '<ul><li><strong>Diseño y proyecto:</strong> Elaboración de planos arquitectónicos, cálculo estructural y especificaciones técnicas para viviendas, edificios y naves industriales, según sus competencias legales.</li><li><strong>Dirección de obra:</strong> Supervisión y coordinación de todos los aspectos de la construcción, desde la planificación hasta la entrega final.</li><li><strong>Peritaje y tasaciones:</strong> Evaluación técnica y económica de inmuebles para fines legales, bancarios o de seguros.</li><li><strong>Docencia e investigación:</strong> Formación de nuevos profesionales y desarrollo de nuevas técnicas constructivas.</li><li><strong>Consultoría:</strong> Asesoramiento a empresas y particulares en proyectos de construcción.</li></ul>'
-                    },
-                    {
-                        title: 'Importancia en el desarrollo urbano',
-                        content: 'El Constructor Civil es un pilar fundamental en el desarrollo de ciudades sostenibles y funcionales. Su formación específica le permite entender tanto los aspectos de diseño como los de ejecución, lo que lo convierte en un profesional clave para materializar proyectos que mejoren la calidad de vida de las personas. Su conocimiento detallado de los materiales y técnicas constructivas le permite optimizar recursos, mejorar la calidad y garantizar la seguridad de las edificaciones, contribuyendo significativamente al crecimiento ordenado y sostenible de las comunidades.'
-                    }
-                ]
-            },
-            'sig-gis': {
-                img: 'https://mariomolina-mm-ar.github.io/mysite/images/mapa_mundo.jpg',
-                title: 'Profesional en SIG/GIS',
-                sections: [
-                    {
-                        title: '¿Qué hace este profesional?',
-                        content: 'Un profesional en Sistemas de Información Geográfica (SIG/GIS) es un experto en capturar, almacenar, analizar y gestionar datos geoespaciales. Su trabajo consiste en transformar datos geográficos en información útil para la toma de decisiones en diversos campos como la planificación urbana, la gestión de recursos naturales, el análisis de riesgos y la logística.'
-                    },
-                    {
-                        title: 'Video relacionado',
-                        content: '<div class="video-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/-L1KcItYbLQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>'
-                    },
-                    {
-                        title: '¿Dónde se estudia?',
-                        content: 'La formación en SIG/GIS se puede obtener a través de carreras universitarias como Geografía, Ingeniería Geomática, Topografía o Ingeniería Civil, así como a través de posgrados, maestrías y cursos especializados. Instituciones como la Universidad Nacional de La Plata, la Universidad de Buenos Aires y la Universidad Nacional de Córdoba ofrecen programas relacionados en Argentina.'
-                    },
-                    {
-                        title: '¿Qué puede hacer?',
-                        content: '<ul><li>Crear y mantener bases de datos geoespaciales.</li><li>Realizar análisis espacial para identificar patrones y tendencias.</li><li>Desarrollar mapas temáticos y visualizaciones geográficas.</li><li>Implementar sistemas de posicionamiento global (GPS) para recolección de datos.</li><li>Colaborar en proyectos de planificación territorial y urbana.</li><li>Asesorar en la toma de decisiones basadas en información geográfica.</li></ul>'
-                    },
-                    {
-                        title: 'Ámbitos de actuación profesional',
-                        content: '<ul><li><strong>Planificación urbana y territorial:</strong> Análisis de uso del suelo, zonificación y desarrollo urbano sostenible.</li><li><strong>Gestión ambiental:</strong> Monitoreo de ecosistemas, evaluación de impacto ambiental y conservación de recursos naturales.</li><li><strong>Infraestructura y obras públicas:</strong> Selección de sitios para proyectos, análisis de rutas y gestión de redes de servicios.</li><li><strong>Análisis de riesgos:</strong> Evaluación de vulnerabilidad ante desastres naturales y planificación de respuesta.</li><li><strong>Sector privado:</strong> Logística, análisis de mercado y localización de comercios.</li></ul>'
-                    },
-                    {
-                        title: 'Importancia en el desarrollo urbano',
-                        content: 'Los profesionales en SIG/GIS son fundamentales para el desarrollo urbano sostenible, ya que proporcionan herramientas analíticas que permiten optimizar el uso del espacio, mejorar la planificación de infraestructuras y facilitar la toma de decisiones informadas. Su capacidad para integrar múltiples fuentes de datos geográficos ayuda a identificar problemas, modelar escenarios futuros y diseñar soluciones más eficientes para el crecimiento de las ciudades.'
-                    }
-                ]
-            },
-            'topografia-drones': {
-                img: 'https://picsum.photos/seed/drone-surveying/400/200.jpg',
-                title: 'Topografía con Drones',
-                sections: [
-                    {
-                        title: '¿Qué hace este profesional?',
-                        content: 'Un especialista en topografía con drones combina conocimientos tradicionales de topografía con el manejo de vehículos aéreos no tripulados (UAV) para realizar levantamientos topográficos de alta precisión. Este profesional es capaz de planificar vuelos, procesar datos capturados por drones y generar productos cartográficos detallados como modelos digitales de terreno, ortomosaicos y nubes de puntos.'
-                    },
-                    {
-                        title: 'Video relacionado',
-                        content: '<div class="video-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/J3g6f2c2x9U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>'
-                    },
-                    {
-                        title: '¿Dónde se estudia?',
-                        content: 'La formación en topografía con drones se obtiene a través de cursos especializados, diplomados o posgrados que complementan carreras como Topografía, Ingeniería Civil, Geomática o Agrimensura. Existen instituciones privadas y públicas que ofrecen certificaciones en pilotaje de drones y procesamiento de datos fotogramétricos.'
-                    },
-                    {
-                        title: '¿Qué puede hacer?',
-                        content: '<ul><li>Planificar y ejecutar vuelos de drones para captura de datos topográficos.</li><li>Procesar imágenes aéreas para crear ortomosaicos de alta resolución.</li><li>Generar modelos digitales de terreno y de superficie.</li><li>Crear nubes de puntos densas para modelado 3D.</li><li>Realizar mediciones volumétricas y cálculos de movimiento de tierras.</li><li>Producir planos topográficos y cartografía detallada.</li></ul>'
-                    },
-                    {
-                        title: 'Ámbitos de actuación profesional',
-                        content: '<ul><li><strong>Construcción:</strong> Control de obras, medición de avances y seguimiento de excavaciones.</li><li><strong>Minería:</strong> Control de volúmenes, monitoreo de taludes y planificación de explotaciones.</li><li><strong>Agricultura de precisión:</strong> Análisis de cultivos, optimización de riego y fertilización.</li><li><strong>Inspección de infraestructuras:</strong> Evaluación de puentes, líneas eléctricas y edificios.</li><li><strong>Cartografía y catastro:</strong> Actualización de mapas y delimitación de propiedades.</li></ul>'
-                    },
-                    {
-                        title: 'Importancia en el desarrollo urbano',
-                        content: 'La topografía con drones ha revolucionado la forma en que se capturan datos geoespaciales para el desarrollo urbano. Permite obtener información actualizada y detallada de grandes áreas en menos tiempo y con menor costo que los métodos tradicionales. Esta tecnología facilita la planificación urbana precisa, el monitoreo del crecimiento de las ciudades y la gestión eficiente de recursos, contribuyendo a un desarrollo más sostenible y bien informado.'
-                    }
-                ]
-            },
-            'software-opensource': {
-                img: 'https://picsum.photos/seed/open-source-software/400/200.jpg',
-                title: 'Software Open Source en Construcción',
-                sections: [
-                    {
-                        title: '¿Qué hace este profesional?',
-                        content: 'Un especialista en software open source para la construcción es un profesional que domina herramientas de código abierto aplicadas al diseño, modelado y gestión de proyectos de construcción. Este profesional es capaz de implementar soluciones tecnológicas basadas en software libre, reducir costos de licencias y adaptar herramientas a las necesidades específicas de cada proyecto, todo ello sobre una base de sistemas operativos robustos y eficientes.'
-                    },
-                    {
-                        title: 'Video relacionado',
-                        content: '<div class="video-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/yiEcFD8GqmA" title="El Mundo Libre 🌍​Los secretos de Open Source" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>'
-                    },
-                    {
-                        title: '¿Dónde se estudia?',
-                        content: 'No existe una carrera formal específica, pero se adquieren conocimientos a través de cursos, tutoriales y comunidades en línea. La formación suele ser autodidacta o a través de workshops especializados. Muchos profesionales provienen de carreras como Arquitectura, Ingeniería Civil o Diseño Industrial y complementan su formación con aprendizaje de software específico y sistemas operativos.'
-                    },
-                    {
-                        title: '¿Qué puede hacer?',
-                        content: '<ul><li>Implementar flujos de trabajo basados en herramientas open source.</li><li>Desarrollar personalizaciones y plugins para software existente.</li><li>Capacitar a equipos en el uso de herramientas de código abierto.</li><li>Integrar diferentes aplicaciones open source en un ecosistema coherente.</li><li>Asesorar en la transición desde software comercial a soluciones open source.</li><li>Administrar y mantener sistemas operativos GNU/Linux para entornos de trabajo.</li><li>Colaborar en comunidades de desarrollo de software.</li></ul>'
-                    },
-                    {
-                        title: 'Herramientas principales',
-                        content: `
-                            <p>El ecosistema de software open source es amplio y robusto, abarcando desde el sistema operativo hasta aplicaciones especializadas.</p>
-                            <ul>
-                                <li><strong>Sistema Operativo:</strong> GNU/Linux, con especial énfasis en la rama <strong>Debian</strong>, valorada por su estabilidad, seguridad y excelente gestión de recursos, ideal para entornos de trabajo exigentes.</li>
-                                <li><strong>Diseño y Modelado:</strong>
-                                    <ul>
-                                        <li><strong>QCAD:</strong> Diseño asistido por computadora 2D.</li>
-                                        <li><strong>FreeCAD:</strong> Modelado 3D paramétrico para ingeniería.</li>
-                                        <li><strong>Blender:</strong> Modelado 3D, animación y renderizado de alta calidad.</li>
-                                    </ul>
-                                </li>
-                                <li><strong>Sistemas de Información Geográfica (SIG):</strong>
-                                    <ul>
-                                        <li><strong>QGIS:</strong> Lider en el análisis y visualización de datos geoespaciales.</li>
-                                    </ul>
-                                </li>
-                                <li><strong>Diseño Gráfico y Edición de Imágenes:</strong>
-                                    <ul>
-                                        <li><strong>GIMP:</strong> Manipulación y edición de imágenes, alternativa a Photoshop.</li>
-                                        <li><strong>Krita:</strong> Especializado en pintura digital y concepto art.</li>
-                                    </ul>
-                                </li>
-                                <li><strong>Productividad y Oficina:</strong>
-                                    <ul>
-                                        <li><strong>LibreOffice Suite:</strong> Paquete completo (Writer, Calc, Impress) para documentos, hojas de cálculo y presentaciones.</li>
-                                        <li><strong>FreeProject:</strong> Gestión de proyectos y planificación.</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        `
-                    },
-                    {
-                        title: 'Importancia en el desarrollo urbano',
-                        content: 'El software open source democratiza el acceso a herramientas tecnológicas avanzadas, permitiendo que profesionales, empresas pequeñas y administraciones públicas puedan acceder a soluciones de alta calidad sin los altos costos de las licencias comerciales. Esto fomenta la innovación, la colaboración y la adaptación de herramientas a contextos locales, contribuyendo a un desarrollo urbano más inclusivo y sostenible.'
-                    }
-                ]
-            }
-        };
-        
-        // Abrir modal al hacer clic en "Ver más"
-        document.querySelectorAll('.perfil-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                const perfilId = btn.getAttribute('data-perfil');
-                const perfil = perfilesData[perfilId];
-                
-                if (perfil) {
-                    modalImg.src = perfil.img;
-                    modalImg.alt = perfil.title;
-                    modalTitle.textContent = perfil.title;
-                    
-                    // Limpiar contenido anterior
-                    modalBody.innerHTML = '';
-                    
-                    // Agregar secciones del perfil
-                    perfil.sections.forEach(section => {
-                        const sectionDiv = document.createElement('div');
-                        sectionDiv.className = 'modal-section';
-                        
-                        const title = document.createElement('h3');
-                        title.textContent = section.title;
-                        sectionDiv.appendChild(title);
-                        
-                        const content = document.createElement('div');
-                        content.innerHTML = section.content;
-                        sectionDiv.appendChild(content);
-                        
-                        modalBody.appendChild(sectionDiv);
-                    });
-                    
-                    // Mostrar modal
-                    modal.style.display = 'block';
-                    document.body.style.overflow = 'hidden';
-                }
-            });
-        });
-        
-        // Cerrar modal
-        closeModal.addEventListener('click', () => {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        });
-        
-        // Cerrar modal al hacer clic fuera del contenido
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-    </script>
+<!-- Perfil 3: Topografía con Drones -->
+<div class="perfil-card">
+<div class="perfil-img">
+<img src="/Images/topografia_drone.jpg" alt="Topografía con Drones" loading="lazy">
+</div>
+<div class="perfil-content">
+<h3 class="perfil-title">Topografía con Drones</h3>
+<p class="perfil-description">Especialista en levantamientos topográficos utilizando tecnología de drones para mayor precisión y eficiencia.</p>
+<a href="#" class="perfil-btn" data-perfil="topografia-drones">Ver más</a>
+</div>
+</div>
+
+<!-- Perfil 4: Software Open Source -->
+<div class="perfil-card">
+<div class="perfil-img">
+<img src="https://picsum.photos/seed/open-source-software/400/200.jpg" alt="Software Open Source" loading="lazy">
+</div>
+<div class="perfil-content">
+<h3 class="perfil-title">Software Open Source</h3>
+<p class="perfil-description">Experto en herramientas de diseño y construcción de código abierto aplicadas a proyectos de ingeniería.</p>
+<a href="#" class="perfil-btn" data-perfil="software-opensource">Ver más</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Modal para detalles del perfil -->
+<div class="modal" id="perfil-modal">
+<div class="modal-content">
+<span class="close-modal" id="close-modal">&times;</span>
+<div class="modal-header">
+<img class="modal-img" id="modal-img" src="" alt="">
+<h2 class="modal-title" id="modal-title"></h2>
+</div>
+
+<div id="modal-body">
+<!-- El contenido se cargará dinámicamente -->
+</div>
+</div>
+</div>
+
+<!-- Footer -->
+<footer>
+<div class="container">
+<div class="footer-content">
+<div class="social-links">
+<a href="#">🔗</a>
+<a href="#">📘</a>
+<a href="#">📷</a>
+<a href="#">🐦</a>
+</div>
+<p class="copyright">© 2023 Mario Molina. Todos los derechos reservados. Buenos Aires, Argentina.</p>
+</div>
+</div>
+</footer>
+
+<script>
+// Cambio de tema (modo oscuro/claro)
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Verificar si hay un tema guardado en localStorage
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme) {
+body.setAttribute('data-theme', currentTheme);
+themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+}
+
+themeToggle.addEventListener('click', () => {
+const theme = body.getAttribute('data-theme');
+const newTheme = theme === 'dark' ? 'light' : 'dark';
+
+body.setAttribute('data-theme', newTheme);
+localStorage.setItem('theme', newTheme);
+themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+});
+
+// Modal para detalles del perfil
+const modal = document.getElementById('perfil-modal');
+const modalImg = document.getElementById('modal-img');
+const modalTitle = document.getElementById('modal-title');
+const modalBody = document.getElementById('modal-body');
+const closeModal = document.getElementById('close-modal');
+
+// Datos de los perfiles profesionales
+const perfilesData = {
+'constructor-civil': {
+img: 'https://mariomolina-mm-ar.github.io/mysite/images/constructor_civil.jpg',
+title: 'Constructor Civil',
+sections: [
+{
+title: '¿Qué hace este profesional?',
+content: 'El Constructor Civil (o Ingeniero Constructor, según el país) es un profesional colegiado especializado en la planificación, diseño, gestión y ejecución de proyectos de construcción. Con una formación que combina conocimientos técnicos y administrativos, con habilitación legal para diseñar, dirigir y construir viviendas, edificios e infraestructuras, con las limitaciones legales que fija cada colegio profesional y cada jurisdicción.'
+},
+{
+title: 'Video relacionado',
+content: '<div class="video-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/lve-bmd3cKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>'
+},
+{
+title: '¿Dónde se estudia?',
+content: 'La carrera se imparte en universidades e institutos técnicos, con una duración de 4 a 5 años. Un ejemplo es la Carrera de Constructor en la FCEFyN de la Universidad Nacional de Córdoba, Argentina.'
+},
+{
+title: '¿Qué puede hacer?',
+content: '<ul><li>Dirigir y supervisar obras de edificación e infraestructura.</li><li>Gestionar proyectos, desde la planificación y diseño hasta la entrega final.</li><li>Asegurar el cumplimiento de normativas y estándares de construcción.</li><li>Utilizar tecnología avanzada (como AutoCAD, Revit y otros software).</li><li>Trabajar en empresas constructoras, consultorías, sector público o como emprendedor.</li></ul>'
+},
+{
+title: 'Ámbitos de actuación profesional',
+content: '<ul><li><strong>Diseño y proyecto:</strong> Elaboración de planos arquitectónicos, cálculo estructural y especificaciones técnicas para viviendas, edificios y naves industriales, según sus competencias legales.</li><li><strong>Dirección de obra:</strong> Supervisión y coordinación de todos los aspectos de la construcción, desde la planificación hasta la entrega final.</li><li><strong>Peritaje y tasaciones:</strong> Evaluación técnica y económica de inmuebles para fines legales, bancarios o de seguros.</li><li><strong>Docencia e investigación:</strong> Formación de nuevos profesionales y desarrollo de nuevas técnicas constructivas.</li><li><strong>Consultoría:</strong> Asesoramiento a empresas y particulares en proyectos de construcción.</li></ul>'
+},
+{
+title: 'Importancia en el desarrollo urbano',
+content: 'El Constructor Civil es un pilar fundamental en el desarrollo de ciudades sostenibles y funcionales. Su formación específica le permite entender tanto los aspectos de diseño como los de ejecución, lo que lo convierte en un profesional clave para materializar proyectos que mejoren la calidad de vida de las personas. Su conocimiento detallado de los materiales y técnicas constructivas le permite optimizar recursos, mejorar la calidad y garantizar la seguridad de las edificaciones, contribuyendo significativamente al crecimiento ordenado y sostenible de las comunidades.'
+}
+]
+},
+'sig-gis': {
+img: 'https://mariomolina-mm-ar.github.io/mysite/images/mapa_mundo.jpg',
+title: 'Profesional en SIG/GIS',
+sections: [
+{
+title: '¿Qué hace este profesional?',
+content: 'Un profesional en Sistemas de Información Geográfica (SIG/GIS) es un experto en capturar, almacenar, analizar y gestionar datos geoespaciales. Su trabajo consiste en transformar datos geográficos en información útil para la toma de decisiones en diversos campos como la planificación urbana, la gestión de recursos naturales, el análisis de riesgos y la logística.'
+},
+{
+title: 'Video relacionado',
+content: '<div class="video-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/-L1KcItYbLQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>'
+},
+{
+title: '¿Dónde se estudia?',
+content: 'La formación en SIG/GIS se puede obtener a través de carreras universitarias como Geografía, Ingeniería Geomática, Topografía o Ingeniería Civil, así como a través de posgrados, maestrías y cursos especializados. Instituciones como la Universidad Nacional de La Plata, la Universidad de Buenos Aires y la Universidad Nacional de Córdoba ofrecen programas relacionados en Argentina.'
+},
+{
+title: '¿Qué puede hacer?',
+content: '<ul><li>Crear y mantener bases de datos geoespaciales.</li><li>Realizar análisis espacial para identificar patrones y tendencias.</li><li>Desarrollar mapas temáticos y visualizaciones geográficas.</li><li>Implementar sistemas de posicionamiento global (GPS) para recolección de datos.</li><li>Colaborar en proyectos de planificación territorial y urbana.</li><li>Asesorar en la toma de decisiones basadas en información geográfica.</li></ul>'
+},
+{
+title: 'Ámbitos de actuación profesional',
+content: '<ul><li><strong>Planificación urbana y territorial:</strong> Análisis de uso del suelo, zonificación y desarrollo urbano sostenible.</li><li><strong>Gestión ambiental:</strong> Monitoreo de ecosistemas, evaluación de impacto ambiental y conservación de recursos naturales.</li><li><strong>Infraestructura y obras públicas:</strong> Selección de sitios para proyectos, análisis de rutas y gestión de redes de servicios.</li><li><strong>Análisis de riesgos:</strong> Evaluación de vulnerabilidad ante desastres naturales y planificación de respuesta.</li><li><strong>Sector privado:</strong> Logística, análisis de mercado y localización de comercios.</li></ul>'
+},
+{
+title: 'Importancia en el desarrollo urbano',
+content: 'Los profesionales en SIG/GIS son fundamentales para el desarrollo urbano sostenible, ya que proporcionan herramientas analíticas que permiten optimizar el uso del espacio, mejorar la planificación de infraestructuras y facilitar la toma de decisiones informadas. Su capacidad para integrar múltiples fuentes de datos geográficos ayuda a identificar problemas, modelar escenarios futuros y diseñar soluciones más eficientes para el crecimiento de las ciudades.'
+}
+]
+},
+'topografia-drones': {
+img: '/Images/topografia_drone.jpg',
+title: 'Topografía con Drones',
+sections: [
+{
+title: '¿Qué hace este profesional?',
+content: 'Un especialista en topografía con drones combina conocimientos tradicionales de topografía con el manejo de vehículos aéreos no tripulados (UAV) para realizar levantamientos topográficos de alta precisión. Este profesional es capaz de planificar vuelos, procesar datos capturados por drones y generar productos cartográficos detallados como modelos digitales de terreno, ortomosaicos y nubes de puntos.'
+},
+{
+title: 'Video relacionado',
+content: '<div class="video-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/OJ2x5NqxQjQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>'
+},
+{
+title: '¿Dónde se estudia?',
+content: 'La formación en topografía con drones se obtiene a través de cursos especializados, diplomados o posgrados que complementan carreras como Topografía, Ingeniería Civil, Geomática o Agrimensura. Existen instituciones privadas y públicas que ofrecen certificaciones en pilotaje de drones y procesamiento de datos fotogramétricos.'
+},
+{
+title: '¿Qué puede hacer?',
+content: '<ul><li>Planificar y ejecutar vuelos de drones para captura de datos topográficos.</li><li>Procesar imágenes aéreas para crear ortomosaicos de alta resolución.</li><li>Generar modelos digitales de terreno y de superficie.</li><li>Crear nubes de puntos densas para modelado 3D.</li><li>Realizar mediciones volumétricas y cálculos de movimiento de tierras.</li><li>Producir planos topográficos y cartografía detallada.</li></ul>'
+},
+{
+title: 'Ámbitos de actuación profesional',
+content: '<ul><li><strong>Construcción:</strong> Control de obras, medición de avances y seguimiento de excavaciones.</li><li><strong>Minería:</strong> Control de volúmenes, monitoreo de taludes y planificación de explotaciones.</li><li><strong>Agricultura de precisión:</strong> Análisis de cultivos, optimización de riego y fertilización.</li><li><strong>Inspección de infraestructuras:</strong> Evaluación de puentes, líneas eléctricas y edificios.</li><li><strong>Cartografía y catastro:</strong> Actualización de mapas y delimitación de propiedades.</li></ul>'
+},
+{
+title: 'Importancia en el desarrollo urbano',
+content: 'La topografía con drones ha revolucionado la forma en que se capturan datos geoespaciales para el desarrollo urbano. Permite obtener información actualizada y detallada de grandes áreas en menos tiempo y con menor costo que los métodos tradicionales. Esta tecnología facilita la planificación urbana precisa, el monitoreo del crecimiento de las ciudades y la gestión eficiente de recursos, contribuyendo a un desarrollo más sostenible y bien informado.'
+}
+]
+},
+'software-opensource': {
+img: 'https://picsum.photos/seed/open-source-software/400/200.jpg',
+title: 'Software Open Source en Construcción',
+sections: [
+{
+title: '¿Qué hace este profesional?',
+content: 'Un especialista en software open source para la construcción es un profesional que domina herramientas de código abierto aplicadas al diseño, modelado y gestión de proyectos de construcción. Este profesional es capaz de implementar soluciones tecnológicas basadas en software libre, reducir costos de licencias y adaptar herramientas a las necesidades específicas de cada proyecto, todo ello sobre una base de sistemas operativos robustos y eficientes.'
+},
+{
+title: 'Video relacionado',
+content: '<div class="video-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/yiEcFD8GqmA" title="El Mundo Libre 🌍​Los secretos de Open Source" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>'
+},
+{
+title: '¿Dónde se estudia?',
+content: 'No existe una carrera formal específica, pero se adquieren conocimientos a través de cursos, tutoriales y comunidades en línea. La formación suele ser autodidacta o a través de workshops especializados. Muchos profesionales provienen de carreras como Arquitectura, Ingeniería Civil o Diseño Industrial y complementan su formación con aprendizaje de software específico y sistemas operativos.'
+},
+{
+title: '¿Qué puede hacer?',
+content: '<ul><li>Implementar flujos de trabajo basados en herramientas open source.</li><li>Desarrollar personalizaciones y plugins para software existente.</li><li>Capacitar a equipos en el uso de herramientas de código abierto.</li><li>Integrar diferentes aplicaciones open source en un ecosistema coherente.</li><li>Asesorar en la transición desde software comercial a soluciones open source.</li><li>Administrar y mantener sistemas operativos GNU/Linux para entornos de trabajo.</li><li>Colaborar en comunidades de desarrollo de software.</li></ul>'
+},
+{
+title: 'Herramientas principales',
+content: `
+<p>El ecosistema de software open source es amplio y robusto, abarcando desde el sistema operativo hasta aplicaciones especializadas.</p>
+<ul>
+<li><strong>Sistema Operativo:</strong> GNU/Linux, con especial énfasis en la rama <strong>Debian</strong>, valorada por su estabilidad, seguridad y excelente gestión de recursos, ideal para entornos de trabajo exigentes.</li>
+<li><strong>Diseño y Modelado:</strong>
+<ul>
+<li><strong>QCAD:</strong> Diseño asistido por computadora 2D.</li>
+<li><strong>FreeCAD:</strong> Modelado 3D paramétrico para ingeniería.</li>
+<li><strong>Blender:</strong> Modelado 3D, animación y renderizado de alta calidad.</li>
+</ul>
+</li>
+<li><strong>Sistemas de Información Geográfica (SIG):</strong>
+<ul>
+<li><strong>QGIS:</strong> Lider en el análisis y visualización de datos geoespaciales.</li>
+</ul>
+</li>
+<li><strong>Diseño Gráfico y Edición de Imágenes:</strong>
+<ul>
+<li><strong>GIMP:</strong> Manipulación y edición de imágenes, alternativa a Photoshop.</li>
+<li><strong>Krita:</strong> Especializado en pintura digital y concepto art.</li>
+</ul>
+</li>
+<li><strong>Productividad y Oficina:</strong>
+<ul>
+<li><strong>LibreOffice Suite:</strong> Paquete completo (Writer, Calc, Impress) para documentos, hojas de cálculo y presentaciones.</li>
+<li><strong>FreeProject:</strong> Gestión de proyectos y planificación.</li>
+</ul>
+</li>
+</ul>
+`
+},
+{
+title: 'Importancia en el desarrollo urbano',
+content: 'El software open source democratiza el acceso a herramientas tecnológicas avanzadas, permitiendo que profesionales, empresas pequeñas y administraciones públicas puedan acceder a soluciones de alta calidad sin los altos costos de las licencias comerciales. Esto fomenta la innovación, la colaboración y la adaptación de herramientas a contextos locales, contribuyendo a un desarrollo urbano más inclusivo y sostenible.'
+}
+]
+}
+};
+
+// Abrir modal al hacer clic en "Ver más"
+document.querySelectorAll('.perfil-btn').forEach(btn => {
+btn.addEventListener('click', (e) => {
+e.preventDefault();
+const perfilId = btn.getAttribute('data-perfil');
+const perfil = perfilesData[perfilId];
+
+if (perfil) {
+modalImg.src = perfil.img;
+modalImg.alt = perfil.title;
+modalTitle.textContent = perfil.title;
+
+// Limpiar contenido anterior
+modalBody.innerHTML = '';
+
+// Agregar secciones del perfil
+perfil.sections.forEach(section => {
+const sectionDiv = document.createElement('div');
+sectionDiv.className = 'modal-section';
+
+const title = document.createElement('h3');
+title.textContent = section.title;
+sectionDiv.appendChild(title);
+
+const content = document.createElement('div');
+content.innerHTML = section.content;
+sectionDiv.appendChild(content);
+
+modalBody.appendChild(sectionDiv);
+});
+
+// Mostrar modal
+modal.style.display = 'block';
+document.body.style.overflow = 'hidden';
+}
+});
+});
+
+// Cerrar modal
+closeModal.addEventListener('click', () => {
+modal.style.display = 'none';
+document.body.style.overflow = 'auto';
+});
+
+// Cerrar modal al hacer clic fuera del contenido
+window.addEventListener('click', (e) => {
+if (e.target === modal) {
+modal.style.display = 'none';
+document.body.style.overflow = 'auto';
+}
+});
+</script>
 </body>
 </html>
