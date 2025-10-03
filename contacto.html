@@ -6,11 +6,47 @@
     <title>Contacto - Mario Molina | Diseñador AEC | Constructor Civil</title>
     <meta name="description" content="Contacta a Mario Molina para consultoría en proyectos de arquitectura, ingeniería y construcción.">
     
-    <!-- Font Awesome para iconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
     <!-- Estilos CSS -->
     <style>
+        /* Variables CSS para modo claro y oscuro */
+        :root {
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --nav-bg: #2c3e50;
+            --nav-text: #ecf0f1;
+            --nav-active: #3498db;
+            --section-bg: white;
+            --card-bg: #f8f9fa;
+            --card-shadow: rgba(0, 0, 0, 0.05);
+            --heading-color: #2c3e50;
+            --subtext-color: #7f8c8d;
+            --whatsapp-bg: #25D366;
+            --whatsapp-hover: #128C7E;
+            --footer-bg: #2c3e50;
+            --footer-text: #ecf0f1;
+            --footer-copyright: #bdc3c7;
+            --border-color: #eee;
+        }
+        
+        [data-theme="dark"] {
+            --bg-color: #1a1a1a;
+            --text-color: #e0e0e0;
+            --nav-bg: #1a1a1a;
+            --nav-text: #e0e0e0;
+            --nav-active: #3498db;
+            --section-bg: #2a2a2a;
+            --card-bg: #333333;
+            --card-shadow: rgba(0, 0, 0, 0.2);
+            --heading-color: #e0e0e0;
+            --subtext-color: #b0b0b0;
+            --whatsapp-bg: #25D366;
+            --whatsapp-hover: #128C7E;
+            --footer-bg: #1a1a1a;
+            --footer-text: #e0e0e0;
+            --footer-copyright: #b0b0b0;
+            --border-color: #444;
+        }
+        
         /* Reset y estilos básicos */
         * {
             margin: 0;
@@ -20,9 +56,10 @@
         }
         
         body {
-            background-color: #f8f9fa;
-            color: #333;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
         }
         
         .container {
@@ -33,12 +70,13 @@
         
         /* Navegación */
         nav {
-            background-color: #2c3e50;
+            background-color: var(--nav-bg);
             padding: 15px 0;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 100;
+            transition: background-color 0.3s;
         }
         
         .nav-container {
@@ -50,12 +88,13 @@
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
-            color: #fff;
+            color: var(--nav-text);
             text-decoration: none;
+            transition: color 0.3s;
         }
         
         .logo span {
-            color: #3498db;
+            color: var(--nav-active);
         }
         
         .menu {
@@ -68,33 +107,53 @@
         }
         
         .menu a {
-            color: #ecf0f1;
+            color: var(--nav-text);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
         }
         
         .menu a:hover {
-            color: #3498db;
+            color: var(--nav-active);
         }
         
         .menu .active {
-            color: #3498db;
-            border-bottom: 2px solid #3498db;
+            color: var(--nav-active);
+            border-bottom: 2px solid var(--nav-active);
             padding-bottom: 5px;
         }
         
-        /* Hero Section - Versión corregida */
+        /* Botón de modo oscuro */
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--nav-text);
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 5px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+        
+        .theme-toggle:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Hero Section */
         .hero {
             height: 50vh;
             display: flex;
             align-items: center;
             text-align: center;
             color: white;
-            /* Corrección: separar las propiedades de fondo */
             background-image: 
                 linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)),
-                url('https://mariomolina-mm-ar.github.io/mysite/images/contacto.jpg');
+                url('https://picsum.photos/seed/contacto/1200/600.jpg');
             background-position: center center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -119,16 +178,18 @@
         /* Sección Contacto */
         .contacto {
             padding: 80px 0;
-            background-color: white;
+            background-color: var(--section-bg);
+            transition: background-color 0.3s;
         }
         
         .contacto h2 {
             text-align: center;
             margin-bottom: 50px;
-            color: #2c3e50;
+            color: var(--heading-color);
             position: relative;
             padding-bottom: 15px;
             font-size: 2.5rem;
+            transition: color 0.3s;
         }
         
         .contacto h2:after {
@@ -139,7 +200,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background-color: #3498db;
+            background-color: var(--nav-active);
         }
         
         .contacto-container {
@@ -149,16 +210,18 @@
         }
         
         .contacto-info {
-            background: #f8f9fa;
+            background: var(--card-bg);
             border-radius: 10px;
             padding: 40px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 15px var(--card-shadow);
+            transition: background-color 0.3s, box-shadow 0.3s;
         }
         
         .contacto-info h3 {
-            color: #2c3e50;
+            color: var(--heading-color);
             margin-bottom: 30px;
             font-size: 1.8rem;
+            transition: color 0.3s;
         }
         
         .info-item {
@@ -171,7 +234,7 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background-color: #3498db;
+            background-color: var(--nav-active);
             color: white;
             display: flex;
             align-items: center;
@@ -182,42 +245,43 @@
         }
         
         .info-text h4 {
-            color: #2c3e50;
+            color: var(--heading-color);
             margin-bottom: 5px;
             font-size: 1.2rem;
+            transition: color 0.3s;
         }
         
         .info-text p {
-            color: #7f8c8d;
+            color: var(--subtext-color);
+            transition: color 0.3s;
         }
         
         .contacto-form {
-            background: #f8f9fa;
+            background: var(--card-bg);
             border-radius: 10px;
             padding: 40px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
+            box-shadow: 0 5px 15px var(--card-shadow);
+            transition: background-color 0.3s, box-shadow 0.3s;
         }
         
         .contacto-form h3 {
-            color: #2c3e50;
+            color: var(--heading-color);
             margin-bottom: 30px;
             font-size: 1.8rem;
+            transition: color 0.3s;
         }
         
         .contacto-form p {
             margin-bottom: 30px;
             font-size: 1.1rem;
-            color: #555;
+            color: var(--text-color);
+            transition: color 0.3s;
         }
         
         .whatsapp-btn {
             display: inline-flex;
             align-items: center;
-            background-color: #25D366;
+            background-color: var(--whatsapp-bg);
             color: white;
             padding: 15px 30px;
             border-radius: 50px;
@@ -229,7 +293,7 @@
         }
         
         .whatsapp-btn:hover {
-            background-color: #128C7E;
+            background-color: var(--whatsapp-hover);
             transform: translateY(-3px);
             box-shadow: 0 6px 12px rgba(37, 211, 102, 0.4);
         }
@@ -242,16 +306,108 @@
         .contacto-form .contacto-info-text {
             margin-top: 30px;
             padding-top: 20px;
-            border-top: 1px solid #eee;
-            color: #7f8c8d;
+            border-top: 1px solid var(--border-color);
+            color: var(--subtext-color);
+            transition: color 0.3s, border-color 0.3s;
+        }
+        
+        /* Formulario de contacto alternativo */
+        .contact-form-container {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .contact-form-container h4 {
+            color: var(--heading-color);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            transition: color 0.3s;
+        }
+        
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+        
+        .form-group label {
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: var(--heading-color);
+            transition: color 0.3s;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            background-color: var(--section-bg);
+            color: var(--text-color);
+            font-family: inherit;
+            transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--nav-active);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .submit-btn {
+            background-color: var(--nav-active);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+        
+        .submit-btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .form-message {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        
+        .form-message.success {
+            background-color: rgba(46, 204, 113, 0.2);
+            color: #2ecc71;
+            border: 1px solid #2ecc71;
+        }
+        
+        .form-message.error {
+            background-color: rgba(231, 76, 60, 0.2);
+            color: #e74c3c;
+            border: 1px solid #e74c3c;
         }
         
         /* Footer */
         footer {
-            background-color: #2c3e50;
-            color: #ecf0f1;
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
             padding: 40px 0;
             text-align: center;
+            transition: background-color 0.3s, color 0.3s;
         }
         
         .footer-content {
@@ -267,18 +423,19 @@
         }
         
         .social-links a {
-            color: #ecf0f1;
+            color: var(--footer-text);
             font-size: 1.5rem;
             transition: color 0.3s;
         }
         
         .social-links a:hover {
-            color: #3498db;
+            color: var(--nav-active);
         }
         
         .copyright {
             font-size: 0.9rem;
-            color: #bdc3c7;
+            color: var(--footer-copyright);
+            transition: color 0.3s;
         }
         
         /* Responsive */
@@ -325,6 +482,9 @@
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contacto.html" class="active">Contacto</a></li>
             </ul>
+            <button class="theme-toggle" aria-label="Cambiar tema">
+                <span id="theme-icon">🌙</span>
+            </button>
         </div>
     </nav>
 
@@ -345,7 +505,7 @@
                     <h3>Información de Contacto</h3>
                     <div class="info-item">
                         <div class="info-icon">
-                            <i class="fas fa-map-marker-alt"></i>
+                            <span>📍</span>
                         </div>
                         <div class="info-text">
                             <h4>Ubicación</h4>
@@ -355,7 +515,7 @@
                     
                     <div class="info-item">
                         <div class="info-icon">
-                            <i class="fas fa-phone"></i>
+                            <span>📞</span>
                         </div>
                         <div class="info-text">
                             <h4>Teléfono</h4>
@@ -365,11 +525,21 @@
                     
                     <div class="info-item">
                         <div class="info-icon">
-                            <i class="fas fa-clock"></i>
+                            <span>🕐</span>
                         </div>
                         <div class="info-text">
                             <h4>Horario de Atención</h4>
                             <p>Lunes a Viernes: 9:00 - 18:00</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <span>🌐</span>
+                        </div>
+                        <div class="info-text">
+                            <h4>Sitio Web</h4>
+                            <p><a href="https://bio.site/mariomolina.ar" target="_blank" style="color: var(--nav-active);">bio.site/mariomolina.ar</a></p>
                         </div>
                     </div>
                 </div>
@@ -378,10 +548,35 @@
                     <h3>Envíame un Mensaje</h3>
                     <p>Para una respuesta más rápida, puedes enviarme un mensaje directamente a mi WhatsApp. Estaré encantado de atenderte y resolver tus consultas.</p>
                     <a href="https://wa.me/5472351214" class="whatsapp-btn" target="_blank">
-                        <i class="fab fa-whatsapp"></i> Enviar Mensaje
+                        <span>💬</span> Enviar Mensaje
                     </a>
                     <div class="contacto-info-text">
                         <p>Al hacer clic en el botón, serás redirigido a WhatsApp para iniciar una conversación conmigo.</p>
+                    </div>
+                    
+                    <!-- Formulario de contacto alternativo -->
+                    <div class="contact-form-container">
+                        <h4>O envía un mensaje directo</h4>
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Nombre</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Asunto</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensaje</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Enviar Mensaje</button>
+                        </form>
+                        <div id="form-message" class="form-message"></div>
                     </div>
                 </div>
             </div>
@@ -393,14 +588,82 @@
         <div class="container">
             <div class="footer-content">
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><span>💼</span></a>
+                    <a href="#"><span>📘</span></a>
+                    <a href="#"><span>📷</span></a>
+                    <a href="#"><span>🐦</span></a>
                 </div>
                 <p class="copyright">© 2023 Mario Molina. Todos los derechos reservados. Buenos Aires, Argentina.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Cambio de tema (modo oscuro/claro)
+        const themeToggle = document.querySelector('.theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        
+        // Aplicar el tema guardado
+        if (currentTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeIcon.textContent = '☀️';
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            const theme = document.documentElement.getAttribute('data-theme');
+            const newTheme = theme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Cambiar el icono
+            themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        });
+        
+        // Funcionalidad del formulario de contacto
+        const contactForm = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Obtener los datos del formulario
+            const formData = new FormData(contactForm);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            // Crear el contenido del correo
+            const emailContent = `
+                Nombre: ${name}
+                Correo: ${email}
+                Asunto: ${subject}
+                
+                Mensaje:
+                ${message}
+            `;
+            
+            // Crear un enlace mailto con los datos del formulario
+            const mailtoLink = `mailto:molina.aec@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailContent)}`;
+            
+            // Mostrar mensaje de éxito
+            formMessage.textContent = 'Abriendo tu cliente de correo para enviar el mensaje...';
+            formMessage.className = 'form-message success';
+            formMessage.style.display = 'block';
+            
+            // Abrir el cliente de correo
+            window.location.href = mailtoLink;
+            
+            // Limpiar el formulario
+            contactForm.reset();
+            
+            // Ocultar el mensaje después de 5 segundos
+            setTimeout(() => {
+                formMessage.style.display = 'none';
+            }, 5000);
+        });
+    </script>
 </body>
 </html>
