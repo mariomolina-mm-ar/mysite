@@ -153,7 +153,7 @@
             color: white;
             background-image: 
                 linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)),
-                url('https://picsum.photos/seed/contacto/1200/600.jpg');
+                url('https://raw.githubusercontent.com/mariomolina-mm-ar/mysite/main/mysite/images/contacto.jpg');
             background-position: center center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -256,6 +256,12 @@
             transition: color 0.3s;
         }
         
+        .contacto-options {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
         .contacto-form {
             background: var(--card-bg);
             border-radius: 10px;
@@ -304,24 +310,24 @@
         }
         
         .contacto-form .contacto-info-text {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-color);
+            margin-top: 20px;
             color: var(--subtext-color);
-            transition: color 0.3s, border-color 0.3s;
+            transition: color 0.3s;
         }
         
         /* Formulario de contacto alternativo */
         .contact-form-container {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-color);
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px var(--card-shadow);
+            transition: background-color 0.3s, box-shadow 0.3s;
         }
         
         .contact-form-container h4 {
             color: var(--heading-color);
             margin-bottom: 20px;
-            font-size: 1.3rem;
+            font-size: 1.8rem;
             transition: color 0.3s;
         }
         
@@ -544,19 +550,22 @@
                     </div>
                 </div>
                 
-                <div class="contacto-form">
-                    <h3>Envíame un Mensaje</h3>
-                    <p>Para una respuesta más rápida, puedes enviarme un mensaje directamente a mi WhatsApp. Estaré encantado de atenderte y resolver tus consultas.</p>
-                    <a href="https://wa.me/5472351214" class="whatsapp-btn" target="_blank">
-                        <span>💬</span> Enviar Mensaje
-                    </a>
-                    <div class="contacto-info-text">
-                        <p>Al hacer clic en el botón, serás redirigido a WhatsApp para iniciar una conversación conmigo.</p>
+                <div class="contacto-options">
+                    <!-- Opción de WhatsApp -->
+                    <div class="contacto-form">
+                        <h3>Envíame un Mensaje</h3>
+                        <p>Para una respuesta más rápida, puedes enviarme un mensaje directamente a mi WhatsApp. Estaré encantado de atenderte y resolver tus consultas.</p>
+                        <a href="https://wa.me/5472351214" class="whatsapp-btn" target="_blank">
+                            <span>💬</span> Enviar Mensaje
+                        </a>
+                        <div class="contacto-info-text">
+                            <p>Al hacer clic en el botón, serás redirigido a WhatsApp para iniciar una conversación conmigo.</p>
+                        </div>
                     </div>
                     
                     <!-- Formulario de contacto alternativo -->
                     <div class="contact-form-container">
-                        <h4>O envía un mensaje directo</h4>
+                        <h4>Envía un Mensaje Directo</h4>
                         <form id="contact-form" class="contact-form">
                             <div class="form-group">
                                 <label for="name">Nombre</label>
