@@ -205,9 +205,16 @@
         }
         
         .contacto-container {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+        
+        .contacto-options {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 30px;
+            align-items: start;
         }
         
         .contacto-info {
@@ -216,6 +223,7 @@
             padding: 40px;
             box-shadow: 0 5px 15px var(--card-shadow);
             transition: background-color 0.3s, box-shadow 0.3s;
+            width: 100%;
         }
         
         .contacto-info h3 {
@@ -223,6 +231,7 @@
             margin-bottom: 30px;
             font-size: 1.8rem;
             transition: color 0.3s;
+            text-align: center;
         }
         
         .info-item {
@@ -257,32 +266,30 @@
             transition: color 0.3s;
         }
         
-        .contacto-options {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-        
         .contacto-form {
             background: var(--card-bg);
             border-radius: 10px;
             padding: 40px;
             box-shadow: 0 5px 15px var(--card-shadow);
             transition: background-color 0.3s, box-shadow 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         
         .contacto-form h3 {
             color: var(--heading-color);
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             font-size: 1.8rem;
             transition: color 0.3s;
+            text-align: center;
         }
         
-        .contacto-form p {
-            margin-bottom: 30px;
-            font-size: 1.1rem;
-            color: var(--text-color);
-            transition: color 0.3s;
+        .whatsapp-btn-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
         }
         
         .whatsapp-btn {
@@ -310,12 +317,6 @@
             font-size: 1.3rem;
         }
         
-        .contacto-form .contacto-info-text {
-            margin-top: 20px;
-            color: var(--subtext-color);
-            transition: color 0.3s;
-        }
-        
         /* Formulario de contacto alternativo */
         .contact-form-container {
             background: var(--card-bg);
@@ -323,6 +324,9 @@
             padding: 40px;
             box-shadow: 0 5px 15px var(--card-shadow);
             transition: background-color 0.3s, box-shadow 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         
         .contact-form-container h4 {
@@ -330,12 +334,14 @@
             margin-bottom: 20px;
             font-size: 1.8rem;
             transition: color 0.3s;
+            text-align: center;
         }
         
         .contact-form {
             display: flex;
             flex-direction: column;
             gap: 15px;
+            flex-grow: 1;
         }
         
         .form-group {
@@ -469,7 +475,7 @@
                 font-size: 1.2rem;
             }
             
-            .contacto-container {
+            .contacto-options {
                 grid-template-columns: 1fr;
             }
         }
@@ -508,65 +514,21 @@
         <div class="container">
             <h2>Ponte en Contacto</h2>
             <div class="contacto-container">
-                <div class="contacto-info">
-                    <h3>Información de Contacto</h3>
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <span>📍</span>
-                        </div>
-                        <div class="info-text">
-                            <h4>Ubicación</h4>
-                            <p>25 de Mayo, (Buenos Aires) 🇦🇷 | Oficina: Calle 11 N°1065</p>
-                        </div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <span>📞</span>
-                        </div>
-                        <div class="info-text">
-                            <h4>Teléfono</h4>
-                            <p>+54 911 7235 1214</p>
-                        </div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <span>🕐</span>
-                        </div>
-                        <div class="info-text">
-                            <h4>Horario de Atención</h4>
-                            <p>Lunes a Viernes: 9:00 - 18:00</p>
-                        </div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <span>🌐</span>
-                        </div>
-                        <div class="info-text">
-                            <h4>Sitio Web</h4>
-                            <p><a href="https://bio.site/mariomolina.ar" target="_blank" style="color: var(--nav-active);">bio.site/mariomolina.ar</a></p>
-                        </div>
-                    </div>
-                </div>
-                
+                <!-- Opciones de contacto en dos columnas -->
                 <div class="contacto-options">
                     <!-- Opción de WhatsApp -->
                     <div class="contacto-form">
-                        <h3>Envíame un Mensaje por WhatsApp</h3>
-                        <p>Para una respuesta más rápida, puedes enviarme un mensaje directamente a mi WhatsApp y resolver tus consultas.</p>
-                        <a href="https://wa.me/54972351214" class="whatsapp-btn" target="_blank">
-                            <span>💬</span> Enviar Mensaje
-                        </a>
-                        <div class="contacto-info-text">
-                            <p>Al hacer clic en el botón, serás redirigido a WhatsApp</p>
+                        <h3>Enviar mensaje por WhatsApp</h3>
+                        <div class="whatsapp-btn-container">
+                            <a href="https://wa.me/5491172351214" class="whatsapp-btn" target="_blank">
+                                <span>💬</span> Enviar Mensaje
+                            </a>
                         </div>
                     </div>
                     
                     <!-- Formulario de contacto alternativo -->
                     <div class="contact-form-container">
-                        <h4>Envía un Mensaje Directo</h4>
+                        <h4>Enviar mensaje directo</h4>
                         <form id="contact-form" class="contact-form">
                             <div class="form-group">
                                 <label for="name">Nombre</label>
@@ -589,6 +551,70 @@
                         <div id="form-message" class="form-message"></div>
                     </div>
                 </div>
+                
+                <!-- Información de contacto que cubre todo el ancho -->
+                <div class="contacto-info">
+                    <h3>Información de Contacto</h3>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <span>📍</span>
+                        </div>
+                        <div class="info-text">
+                            <h4>Zona de trabajo</h4>
+                            <p>25 de Mayo, (Buenos Aires) y alrededores 🇦🇷</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <span>🏢</span>
+                        </div>
+                        <div class="info-text">
+                            <h4>Oficina</h4>
+                            <p>Calle 11 N°1065 (Entre 29 y 30)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <span>📱</span>
+                        </div>
+                        <div class="info-text">
+                            <h4>WhatsApp</h4>
+                            <p>+54 911 7235 1214</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <span>🕐</span>
+                        </div>
+                        <div class="info-text">
+                            <h4>Horario de Atención</h4>
+                            <p>Lunes a Viernes: 9:00 - 18:00</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <span>📷</span>
+                        </div>
+                        <div class="info-text">
+                            <h4>Instagram</h4>
+                            <p><a href="https://instagram.com/mm.proyectos.ar" target="_blank" style="color: var(--nav-active);">@mm.proyectos.ar</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <span>🌐</span>
+                        </div>
+                        <div class="info-text">
+                            <h4>Sitio Web</h4>
+                            <p><a href="https://bio.site/mariomolina.ar" target="_blank" style="color: var(--nav-active);">bio.site/mariomolina.ar</a></p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -598,10 +624,10 @@
         <div class="container">
             <div class="footer-content">
                 <div class="social-links">
+                    <a href="https://instagram.com/mm.proyectos.ar" target="_blank"><span>📷</span></a>
+                    <a href="https://bio.site/mariomolina.ar" target="_blank"><span>🌐</span></a>
                     <a href="#"><span>💼</span></a>
                     <a href="#"><span>📘</span></a>
-                    <a href="#"><span>📷</span></a>
-                    <a href="#"><span>🐦</span></a>
                 </div>
                 <p class="copyright">© 2023 Mario Molina - Diseño y Construcción - Todos los derechos reservados – Buenos Aires, Argentina 🌎</p>
             </div>
