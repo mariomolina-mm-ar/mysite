@@ -24,7 +24,7 @@
         [data-theme="dark"] {
             --primary-color: #3498db;
             --primary-dark: #2980b9;
-            --secondary-color: #34495e;
+            --secondary-color: #ecf0f1; /* <-- CORRECCIÓN: Color de títulos ahora es claro */
             --text-color: #ecf0f1;
             --text-light: #bdc3c7;
             --bg-color: #1a1a1a;
@@ -173,6 +173,135 @@
             transform: translateY(-3px);
         }
         
+        /* ========================================
+           NUEVA SECCIÓN: GUÍA DEL PROCESO DETALLADO
+           ======================================== */
+        .proceso-detallado {
+            padding: 80px 0;
+            background-color: var(--card-bg);
+            transition: background-color var(--transition-speed);
+        }
+
+        .proceso-detallado .container {
+            max-width: 900px; /* Un poco más estrecha para facilitar la lectura */
+        }
+
+        .proceso-detallado h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            font-size: 2.5rem;
+            transition: color var(--transition-speed);
+        }
+
+        .proceso-detallado > .container > p {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: var(--text-color);
+        }
+
+        .proceso-etapas {
+            background-color: var(--bg-color);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px var(--card-shadow);
+        }
+
+        .proceso-etapas h3 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            transition: color var(--transition-speed);
+        }
+
+        .proceso-etapas ol {
+            list-style: none;
+            counter-reset: etapa-counter;
+            padding-left: 0;
+        }
+
+        .proceso-etapas li {
+            counter-increment: etapa-counter;
+            margin-bottom: 25px;
+            padding-left: 50px;
+            position: relative;
+        }
+
+        .proceso-etapas li::before {
+            content: counter(etapa-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 35px;
+            height: 35px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .proceso-etapas li strong {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 5px;
+            transition: color var(--transition-speed);
+        }
+
+        .guia-preparacion h3 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            transition: color var(--transition-speed);
+        }
+
+        .guia-preparacion ol {
+            list-style: none;
+            counter-reset: guia-counter;
+            padding-left: 0;
+        }
+
+        .guia-preparacion li {
+            counter-increment: guia-counter;
+            margin-bottom: 25px;
+            padding-left: 50px;
+            position: relative;
+        }
+
+        .guia-preparacion li::before {
+            content: counter(guia-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 35px;
+            height: 35px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .guia-preparacion li strong {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 5px;
+            transition: color var(--transition-speed);
+        }
+        /* ========================================
+           FIN DE LA NUEVA SECCIÓN
+           ======================================== */
+
         /* Sección Servicios */
         .servicios {
             padding: 80px 0;
@@ -331,73 +460,6 @@
             transition: color var(--transition-speed);
         }
         
-        /* Sección Proceso */
-        .proceso {
-            padding: 80px 0;
-            background-color: var(--bg-color);
-            transition: background-color var(--transition-speed);
-        }
-        
-        .proceso h2 {
-            text-align: center;
-            margin-bottom: 50px;
-            color: var(--secondary-color);
-            position: relative;
-            padding-bottom: 15px;
-            font-size: 2.5rem;
-            transition: color var(--transition-speed);
-        }
-        
-        .proceso h2:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--primary-color);
-        }
-        
-        .proceso-steps {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-        
-        .step {
-            flex: 1;
-            min-width: 200px;
-            text-align: center;
-            position: relative;
-        }
-        
-        .step-number {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: var(--primary-color);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 1.8rem;
-            font-weight: bold;
-        }
-        
-        .step h3 {
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-            transition: color var(--transition-speed);
-        }
-        
-        .step p {
-            margin-bottom: 20px;
-        }
-        
         /* Sección CTA */
         .cta {
             padding: 100px 0;
@@ -499,14 +561,6 @@
             .hero p {
                 font-size: 1.2rem;
             }
-            
-            .proceso-steps {
-                flex-direction: column;
-            }
-            
-            .step {
-                margin-bottom: 30px;
-            }
         }
     </style>
 </head>
@@ -539,14 +593,66 @@
         <div class="hero-content">
             <h1>Servicios Profesionales</h1>
             <p>Diseño, construcción y gestión integral de proyectos de arquitectura e ingeniería</p>
-            <a href="#servicios" class="btn">Conocer Servicios</a>
+            <a href="#proceso-detallado" class="btn">Conocer Nuestro Proceso</a>
         </div>
     </section>
+
+    <!-- ========================================
+       NUEVA SECCIÓN: GUÍA DEL PROCESO DETALLADO
+       ======================================== -->
+    <section class="proceso-detallado" id="proceso-detallado">
+        <div class="container">
+            <h2>Así Preparamos tu Proyecto: Guía para la Primera Cita</h2>
+            <p>¡Hola! Queremos que tu primera visita sea lo más útil posible. Por eso, te explicamos de forma sencilla cómo trabajamos y cómo puedes prepararte.</p>
+            
+            <div class="proceso-etapas">
+                <h3>Nuestro proceso, en 3 etapas claras:</h3>
+                <ol>
+                    <li>
+                        <strong>Etapa 1: Anteproyecto.</strong>
+                        Damos vida a tus ideas con los primeros bocetos y el diseño conceptual. Aquí definimos la forma, la distribución y el estilo de tu proyecto.
+                    </li>
+                    <li>
+                        <strong>Etapa 2: Proyecto Arquitectónico y Regularizaciones.</strong>
+                        Convertimos el diseño aprobado en planos técnicos y detallados para la construcción. Además, nos encargamos de toda la gestión y trámites municipales para obtener los permisos necesarios.
+                    </li>
+                    <li>
+                        <strong>Etapa 3: Dirección de Obra.</strong>
+                        Durante la construcción, supervisamos que la obra se ejecute según los planos, los materiales y la calidad acordados. *(Aclaración: Nuestro rol es de supervisión y control, no ejecutamos la obra directamente).*
+                    </li>
+                </ol>
+            </div>
+
+            <div class="guia-preparacion">
+                <h3>¿Cómo prepararte para nuestra primera reunión?</h3>
+                <ol>
+                    <li>
+                        <strong>Trae tus ideas (¡aunque no estén claras!)</strong>
+                        Piensa en cómo te gustaría usar el espacio (tu casa, un local, etc.) y qué es lo más importante para ti (funcionalidad, estilo, etc.). No necesitas tener un diseño definido, ¡para eso estamos nosotros! Tus ideas son el punto de partida perfecto.
+                    </li>
+                    <li>
+                        <strong>Presupuesto y Primera Consulta Gratuita</strong>
+                        <p>La primera consulta es gratuita. En ella, conversamos sobre tus necesidades y la viabilidad de tu proyecto. Sin costo alguno, te presentamos un presupuesto claro por los honorarios del <strong>Anteproyecto</strong>.</p>
+                        <p><strong>¿Y qué es exactamente el Anteproyecto?</strong></p>
+                        <p>Es la etapa inicial donde damos vida a tus ideas. Creamos los primeros bocetos para definir la distribución espacial y el diseño conceptual. Luego, seleccionamos la estructura, los materiales y definimos la ingeniería del proyecto para desarrollar los planos y modelos 3D que te presentaremos para su aprobación.</p>
+                        <p><strong>Lo más importante:</strong> En proyectos a medida, esta etapa no solo te entrega el diseño 3D y las especificaciones técnicas, sino que también <strong>incluye el presupuesto general y definitivo de la obra</strong>. Sin sorpresas.</p>
+                    </li>
+                    <li>
+                        <strong>Reúne la información que tengas</strong>
+                        Si cuentas con planos, fotos del lugar, o el título de propiedad, ¡genial! Ayudará a agilizar el proceso. Si no tienes nada, no te preocupes: podemos visitar el inmueble para hacer un relevamiento.
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <!-- ========================================
+       FIN DE LA NUEVA SECCIÓN
+       ======================================== -->
 
     <!-- Sección Servicios -->
     <section class="servicios" id="servicios">
         <div class="container">
-            <h2>Mis Servicios</h2>
+            <h2>Servicios Detallados</h2>
             <div class="servicios-grid">
                 <div class="servicio-card">
                     <div class="servicio-icon">
@@ -679,44 +785,6 @@
                     </div>
                     <h3>Peritajes y Tasaciones</h3>
                     <p>Evaluación técnica y económica de inmuebles para fines legales, bancarios o de seguros.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección Proceso -->
-    <section class="proceso">
-        <div class="container">
-            <h2>Mi Proceso de Trabajo</h2>
-            <div class="proceso-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Consulta Inicial</h3>
-                    <p>Análisis de necesidades, objetivos y requerimientos del cliente para definir el alcance del proyecto.</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Diseño y Planificación</h3>
-                    <p>Desarrollo de planos, modelos 3D y especificaciones técnicas con herramientas CAD/BIM.</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Gestión de Permisos</h3>
-                    <p>Tramitación de licencias y permisos necesarios ante autoridades municipales y organismos de control.</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Ejecución</h3>
-                    <p>Construcción y supervisión de la obra con control de calidad, plazos y presupuesto.</p>
-                </div>
-                
-                <div class="step">
-                    <div class="step-number">5</div>
-                    <h3>Entrega Final</h3>
-                    <p>Inspección final, documentación de obra y entrega del proyecto completado al cliente.</p>
                 </div>
             </div>
         </div>
