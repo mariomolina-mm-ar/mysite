@@ -329,6 +329,89 @@
         .servicio-link:hover {
             color: #2980b9;
         }
+
+        /* ========================================
+           SECCIÓN AÑADIDA: PROCESO RESUMIDO
+           ======================================== */
+        /* Sección Proceso Resumido */
+        .proceso-resumido {
+            padding: 80px 0;
+            background-color: var(--card-bg);
+            text-align: center;
+        }
+
+        .proceso-resumido h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--title-color);
+            position: relative;
+            padding-bottom: 15px;
+            font-size: 2.5rem;
+        }
+
+        .proceso-resumido h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+
+        .proceso-resumido > .container > p {
+            max-width: 700px;
+            margin: 0 auto 50px;
+            font-size: 1.2rem;
+            color: var(--text-color);
+        }
+
+        .proceso-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .proceso-paso {
+            background-color: var(--bg-color);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 5px solid var(--primary-color);
+        }
+
+        .proceso-paso:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .paso-numero {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .proceso-paso h3 {
+            color: var(--title-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .proceso-paso p {
+            color: var(--text-color);
+            font-size: 1rem;
+        }
+
+        .cta-proceso {
+            margin-top: 20px;
+        }
+        /* ========================================
+           FIN DE LA SECCIÓN AÑADIDA
+           ======================================== */
         
         /* Sección Experiencia */
         .experiencia {
@@ -536,7 +619,7 @@
                 <div class="resumen-text">
                     <h3>Mario Molina</h3>
                     <p>Soy un profesional con más de tres décadas de experiencia en desarrollo, planificación y gerenciamiento de proyectos de ingeniería y construcción, abarcando viviendas, edificios y naves industriales.</p>
-                    <p>Mi trayectoria incluye desarrollo de proyectos industriales en empresas líderes como Philips, Whirlpool, Peabody y Philco. En Philco, desde el 2002 ocupé roles gerenciales en ingeniería y producción.</p>
+                    <p>Mi trayectoria incluye trabajo en empresas líderes como Philips, Whirlpool, Peabody y Philco, donde ocupé roles gerenciales en ingeniería y producción.</p>
                     <p>Desde 2010, brindo diseño y consultoría a inversores y profesionales en construcción civil e industrial, integrando tecnologías avanzadas como CAD, BIM, GIS e Inteligencia Artificial.</p>
                     <a href="sobre-mi.html" class="btn">Conocer Mi Trayectoria</a>
                 </div>
@@ -604,6 +687,44 @@
         </div>
     </section>
 
+    <!-- ========================================
+       SECCIÓN AÑADIDA: PROCESO RESUMIDO
+       ======================================== -->
+    <!-- Sección Proceso Resumido -->
+    <section class="proceso-resumido">
+        <div class="container">
+            <h2>Nuestro Proceso, Simple y Claro</h2>
+            <p>Te guiamos en cada paso para hacer realidad tu proyecto, desde la idea inicial hasta la entrega final.</p>
+            
+            <div class="proceso-grid">
+                <div class="proceso-paso">
+                    <div class="paso-numero">1</div>
+                    <h3>Diseño Inicial</h3>
+                    <p>Damos vida a tus ideas con los primeros bocetos y el diseño conceptual.</p>
+                </div>
+                
+                <div class="proceso-paso">
+                    <div class="paso-numero">2</div>
+                    <h3>Planos y Permisos</h3>
+                    <p>Desarrollamos la documentación técnica y gestionamos todos los trámites municipales.</p>
+                </div>
+                
+                <div class="proceso-paso">
+                    <div class="paso-numero">3</div>
+                    <h3>Supervisión de Obra</h3>
+                    <p>Aseguramos la calidad y el cumplimiento del proyecto durante toda la construcción.</p>
+                </div>
+            </div>
+            
+            <div class="cta-proceso">
+                <a href="servicios.html" class="btn">Conoce Nuestro Proceso en Detalle</a>
+            </div>
+        </div>
+    </section>
+    <!-- ========================================
+       FIN DE LA SECCIÓN AÑADIDA
+       ======================================== -->
+
     <!-- Sección Experiencia -->
     <section class="experiencia">
         <div class="container">
@@ -648,7 +769,7 @@
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                 </div>
-                <p class="copyright">© 2023 Mario Molina · Diseño y Construcción · Todos los derechos reservados. Buenos Aires, Argentina.</p>
+                <p class="copyright">© 2023 Mario Molina. Todos los derechos reservados. Buenos Aires, Argentina.</p>
             </div>
         </div>
     </footer>
