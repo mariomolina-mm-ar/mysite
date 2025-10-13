@@ -25,10 +25,10 @@
             --primary-color: #3498db;
             --primary-dark: #2980b9;
             --secondary-color: #ecf0f1;
-            --text-color: #e0e0e0; /* <-- CORRECCIÓN: Texto más claro para mejor legibilidad */
+            --text-color: #e0e0e0;
             --text-light: #bdc3c7;
-            --bg-color: #2a2a2a; /* <-- CORRECCIÓN: Fondo gris oscuro */
-            --card-bg: #333333; /* <-- CORRECCIÓN: Tarjetas con fondo gris oscuro */
+            --bg-color: #2a2a2a;
+            --card-bg: #333333;
             --card-shadow: rgba(0, 0, 0, 0.3);
         }
         
@@ -572,7 +572,7 @@
                 <li>
                     <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
                         <svg class="icon" id="theme-icon" viewBox="0 0 24 24">
-                            <path d="M12 18c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6zm0-10c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4zM12 4c.6 0 1-.4 1-1V1c0-.6-.4-1-1-1s-1 .4-1 1v2c0 .6.4 1 1 1zM12 20c-.6 0-1 .4-1 1v2c0 .6.4 1 1 1s1-.4 1-1v-2c0-.6-.4-1-1-1zM4.9 4.9c.4-.4.4-1 0-1.4L3.5 2.1c-.4-.4-1-.4-1.4 0s-.4 1 0 1.4l1.4 1.4c.4.4 1 .4 1.4 0zM19.1 19.1c-.4.4-.4 1 0 1.4l1.4 1.4c.4.4 1 .4 1.4 0s.4-1 0-1.4l-1.4-1.4c-.4-.4-1-.4-1.4 0zM4 12c0-.6-.4-1-1-1H1c-.6 0-1 .4-1 1s.4 1 1 1h2c.6 0 1-.4 1-1zM23 11h-2c-.6 0-1 .4-1 1s.4 1 1 1h2c.6 0 1-.4 1-1s-.4-1-1-1zM4.9 19.1c-.4.4-.4 1 0 1.4.4.4 1 .4 1.4 0l1.4-1.4c.4-.4.4-1 0-1.4s-1-.4-1.4 0l-1.4 1.4zM19.1 4.9c.4-.4.4-1 0-1.4s-1-.4-1.4 0l-1.4 1.4c-.4.4-.4 1 0 1.4s1 .4 1.4 0l1.4-1.4z"/>
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
                         </svg>
                     </button>
                 </li>
@@ -713,7 +713,7 @@
                             <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
                         </svg>
                     </div>
-                    <h3>Supervisión de Obras</h3>
+                    <h3>Dirección de Obras</h3>
                     <p>Control de calidad y seguimiento de obras para garantizar cumplimiento de especificaciones técnicas.</p>
                 </div>
                 
@@ -746,7 +746,7 @@
                         </li>
                         <li>
                             <strong>Etapa 2: Proyecto Arquitectónico.</strong>
-                            Convertimos el anteproyecto aprobado en planos técnicos y detallados para la construcción. Además, nos encargamos de toda la gestión y trámites municipales para obtener los permisos necesarios.
+                            En esta etapa desarrollamos planos de construcción e ingeniería de detalles, planos de instalación hidrosanitaria, gas, electricidad y de estructura. Además, nos encargamos de toda la gestión y trámites municipales para obtener los permisos necesarios.
                         </li>
                         <li>
                             <strong>Etapa 3: Dirección de Obra.</strong>
@@ -840,16 +840,11 @@
                 document.documentElement.setAttribute('data-theme', savedTheme);
                 updateThemeIcon(savedTheme);
             } else {
-                // Si no hay tema guardado, verificar la preferencia del sistema
-                const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                
-                if (prefersDarkScheme) {
-                    document.documentElement.setAttribute('data-theme', 'dark');
-                    updateThemeIcon('dark');
-                } else {
-                    document.documentElement.setAttribute('data-theme', 'light');
-                    updateThemeIcon('light');
-                }
+                // Si no hay tema guardado, establecer el modo oscuro como predeterminado
+                document.documentElement.setAttribute('data-theme', 'dark');
+                updateThemeIcon('dark');
+                // Guardar la preferencia en localStorage
+                localStorage.setItem('theme', 'dark');
             }
         }
         
