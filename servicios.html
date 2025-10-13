@@ -24,12 +24,12 @@
         [data-theme="dark"] {
             --primary-color: #3498db;
             --primary-dark: #2980b9;
-            --secondary-color: #ecf0f1; /* <-- CORRECCIÓN: Color de títulos ahora es claro */
-            --text-color: #ecf0f1;
+            --secondary-color: #ecf0f1;
+            --text-color: #e0e0e0; /* <-- CORRECCIÓN: Texto más claro para mejor legibilidad */
             --text-light: #bdc3c7;
-            --bg-color: #1a1a1a;
-            --card-bg: #2c3e50;
-            --card-shadow: rgba(0, 0, 0, 0.2);
+            --bg-color: #2a2a2a; /* <-- CORRECCIÓN: Fondo gris oscuro */
+            --card-bg: #333333; /* <-- CORRECCIÓN: Tarjetas con fondo gris oscuro */
+            --card-shadow: rgba(0, 0, 0, 0.3);
         }
         
         /* Reset y estilos básicos */
@@ -173,140 +173,6 @@
             transform: translateY(-3px);
         }
         
-        /* ========================================
-           NUEVA SECCIÓN: GUÍA DEL PROCESO DETALLADO
-           ======================================== */
-        .proceso-detallado {
-            padding: 80px 0;
-            background-color: var(--card-bg);
-            transition: background-color var(--transition-speed);
-        }
-
-        .proceso-detallado .container {
-            max-width: 900px; /* Un poco más estrecha para facilitar la lectura */
-        }
-
-        .proceso-detallado h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: var(--secondary-color);
-            font-size: 2.5rem;
-            transition: color var(--transition-speed);
-        }
-
-        .proceso-detallado > .container > p {
-            text-align: center;
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            color: var(--text-color);
-        }
-
-        .proceso-etapas {
-            background-color: var(--bg-color);
-            padding: 30px;
-            border-radius: 10px;
-            margin-bottom: 40px;
-            box-shadow: 0 5px 15px var(--card-shadow);
-        }
-
-        .proceso-etapas h3 {
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-            transition: color var(--transition-speed);
-        }
-
-        .proceso-etapas ol {
-            list-style: none;
-            counter-reset: etapa-counter;
-            padding-left: 0;
-        }
-
-        .proceso-etapas li {
-            counter-increment: etapa-counter;
-            margin-bottom: 25px;
-            padding-left: 50px;
-            position: relative;
-        }
-
-        .proceso-etapas li::before {
-            content: counter(etapa-counter);
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 35px;
-            height: 35px;
-            background-color: var(--primary-color);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-        }
-
-        .proceso-etapas li strong {
-            color: var(--secondary-color);
-            font-size: 1.2rem;
-            display: block;
-            margin-bottom: 5px;
-            transition: color var(--transition-speed);
-        }
-
-        .guia-preparacion h3 {
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-            transition: color var(--transition-speed);
-        }
-
-        .guia-preparacion ol {
-            list-style: none;
-            counter-reset: guia-counter;
-            padding-left: 0;
-        }
-
-        .guia-preparacion li {
-            counter-increment: guia-counter;
-            margin-bottom: 25px;
-            padding-left: 50px;
-            position: relative;
-        }
-
-        .guia-preparacion li::before {
-            content: counter(guia-counter);
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 35px;
-            height: 35px;
-            background-color: var(--primary-color);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-        }
-
-        .guia-preparacion li strong {
-            color: var(--secondary-color);
-            font-size: 1.2rem;
-            display: block;
-            margin-bottom: 10px;
-            transition: color var(--transition-speed);
-        }
-        
-        /* Contenido específico del punto 2 para mejor layout */
-        .guia-preparacion .contenido-punto-2 p {
-            margin-bottom: 15px;
-        }
-        /* ========================================
-           FIN DE LA NUEVA SECCIÓN
-           ======================================== */
-
         /* Sección Servicios */
         .servicios {
             padding: 80px 0;
@@ -465,6 +331,127 @@
             transition: color var(--transition-speed);
         }
         
+        /* ========================================
+           NUEVA SECCIÓN: GUÍA DEL PROCESO DETALLADO
+           ======================================== */
+        .proceso-detallado {
+            padding: 80px 0;
+            background-color: var(--bg-color);
+            transition: background-color var(--transition-speed);
+        }
+
+        .proceso-detallado h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--secondary-color);
+            position: relative;
+            padding-bottom: 15px;
+            font-size: 2.5rem;
+            transition: color var(--transition-speed);
+        }
+
+        .proceso-detallado h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+
+        .proceso-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .proceso-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px var(--card-shadow);
+            transition: transform var(--transition-speed), background-color var(--transition-speed);
+            height: 100%;
+        }
+
+        .proceso-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .proceso-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            transition: color var(--transition-speed);
+        }
+
+        .proceso-card h3 .number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            margin-right: 15px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .proceso-card ol {
+            list-style: none;
+            counter-reset: etapa-counter;
+            padding-left: 0;
+        }
+
+        .proceso-card li {
+            counter-increment: etapa-counter;
+            margin-bottom: 20px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .proceso-card li::before {
+            content: counter(etapa-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 25px;
+            height: 25px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .proceso-card li strong {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 5px;
+            transition: color var(--transition-speed);
+        }
+
+        .proceso-card p {
+            margin-bottom: 15px;
+        }
+
+        .proceso-card .contenido-punto-2 p {
+            margin-bottom: 15px;
+        }
+        /* ========================================
+           FIN DE LA NUEVA SECCIÓN
+           ======================================== */
+        
         /* Sección CTA */
         .cta {
             padding: 100px 0;
@@ -601,60 +588,6 @@
             <a href="#proceso-detallado" class="btn">Conocer Nuestro Proceso</a>
         </div>
     </section>
-
-    <!-- ========================================
-       NUEVA SECCIÓN: GUÍA DEL PROCESO DETALLADO
-       ======================================== -->
-    <section class="proceso-detallado" id="proceso-detallado">
-        <div class="container">
-            <h2>Así Preparamos tu Proyecto: Guía para la Primera Cita</h2>
-            <p>¡Hola! Queremos que tu primera visita sea lo más útil posible. Por eso, te explicamos de forma sencilla cómo trabajamos y cómo puedes prepararte.</p>
-            
-            <div class="proceso-etapas">
-                <h3>Nuestro proceso, en 3 etapas claras:</h3>
-                <ol>
-                    <li>
-                        <strong>Etapa 1: Anteproyecto.</strong>
-                        Damos vida a tus ideas con los primeros bocetos y el diseño conceptual. Aquí definimos la forma, la distribución y el estilo de tu proyecto.
-                    </li>
-                    <li>
-                        <strong>Etapa 2: Proyecto Arquitectónico.</strong>
-                        Convertimos el anteproyecto aprobado en planos técnicos y detallados para la construcción. Además, nos encargamos de toda la gestión y trámites municipales para obtener los permisos necesarios.
-                    </li>
-                    <li>
-                        <strong>Etapa 3: Dirección de Obra.</strong>
-                        Durante la construcción, supervisamos que la obra se ejecute según los planos, los materiales y la calidad acordados.
-                    </li>
-                </ol>
-            </div>
-
-            <div class="guia-preparacion">
-                <h3>¿Cómo prepararte para nuestra primera reunión?</h3>
-                <ol>
-                    <li>
-                        <strong>Trae tus ideas (¡aunque no estén claras!)</strong>
-                        Piensa en cómo te gustaría usar el espacio (tu casa, un local, etc.) y qué es lo más importante para ti (funcionalidad, estilo, etc.). No necesitas tener un diseño definido, ¡para eso estamos nosotros! Tus ideas son el punto de partida perfecto.
-                    </li>
-                    <li>
-                        <strong>Presupuesto y Primera Consulta Gratuita</strong>
-                        <div class="contenido-punto-2">
-                            <p>La primera consulta es gratuita. En ella, conversamos sobre tus necesidades y la viabilidad de tu proyecto. Sin costo, te presentamos un presupuesto claro por los honorarios del anteproyecto.</p>
-                            
-                            <p><strong>¿Y qué es exactamente el Anteproyecto?</strong></p>
-                            <p>Es la etapa inicial donde damos vida a tus ideas con diseños personalizados a medida. Creamos los primeros bocetos para definir la distribución y el estilo. Luego, avanzamos con la materialidad y la ingeniería para desarrollar los planos y modelos 3D que te presentaremos para su aprobación. Finalmente, definimos el soporte físico de la obra: la estructura.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <strong>Reúne la información que tengas</strong>
-                        Si cuentas con planos, fotos del lugar, o el título de propiedad, ¡genial! Ayudará a agilizar el proceso. Si no tienes nada, no te preocupes: podemos visitar el inmueble para hacer un relevamiento.
-                    </li>
-                </ol>
-            </div>
-        </div>
-    </section>
-    <!-- ========================================
-       FIN DE LA NUEVA SECCIÓN
-       ======================================== -->
 
     <!-- Sección Servicios -->
     <section class="servicios" id="servicios">
@@ -796,6 +729,65 @@
             </div>
         </div>
     </section>
+
+    <!-- ========================================
+       NUEVA SECCIÓN: GUÍA DEL PROCESO DETALLADO
+       ======================================== -->
+    <section class="proceso-detallado" id="proceso-detallado">
+        <div class="container">
+            <h2>¿Cómo comenzamos a trabajar?</h2>
+            <div class="proceso-grid">
+                <div class="proceso-card">
+                    <h3><span class="number">1</span> Nuestro proceso</h3>
+                    <ol>
+                        <li>
+                            <strong>Etapa 1: Anteproyecto.</strong>
+                            Damos vida a tus ideas con los primeros bocetos y el diseño conceptual. Aquí definimos la forma, la distribución y el estilo de tu proyecto.
+                        </li>
+                        <li>
+                            <strong>Etapa 2: Proyecto Arquitectónico.</strong>
+                            Convertimos el anteproyecto aprobado en planos técnicos y detallados para la construcción. Además, nos encargamos de toda la gestión y trámites municipales para obtener los permisos necesarios.
+                        </li>
+                        <li>
+                            <strong>Etapa 3: Dirección de Obra.</strong>
+                            Durante la construcción, supervisamos que la obra se ejecute según los planos, los materiales y la calidad acordados.
+                        </li>
+                    </ol>
+                </div>
+                
+                <div class="proceso-card">
+                    <h3><span class="number">2</span> Preparación para la primera reunión</h3>
+                    <ol>
+                        <li>
+                            <strong>Trae tus ideas</strong>
+                            Piensa en cómo te gustaría usar el espacio y qué es lo más importante para ti. No necesitas tener un diseño definido, ¡para eso estamos nosotros!
+                        </li>
+                        <li>
+                            <strong>Presupuesto</strong>
+                            La primera consulta es gratuita. En ella, conversamos sobre tus necesidades y la viabilidad de tu proyecto. Sin costo, te presentamos un presupuesto claro por los honorarios del anteproyecto.
+                        </li>
+                    </ol>
+                </div>
+                
+                <div class="proceso-card">
+                    <h3><span class="number">3</span> Información útil</h3>
+                    <ol>
+                        <li>
+                            <strong>¿Qué es el Anteproyecto?</strong>
+                            Es la etapa inicial donde damos vida a tus ideas con diseños personalizados a medida. Creamos los primeros bocetos para definir la distribución y el estilo. Luego, avanzamos con la materialidad y la ingeniería para desarrollar los planos y modelos 3D que te presentaremos para su aprobación.
+                        </li>
+                        <li>
+                            <strong>Documentación</strong>
+                            Si cuentas con planos, fotos del lugar, o el título de propiedad, ¡genial! Ayudará a agilizar el proceso. Si no tienes nada, no te preocupes: podemos visitar el inmueble para hacer un relevamiento.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================================
+       FIN DE LA NUEVA SECCIÓN
+       ======================================== -->
 
     <!-- Sección CTA -->
     <section class="cta" id="contacto">
