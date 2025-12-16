@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Mí - Mario Molina | Diseñador AEC | Constructor Civil</title>
+    <title>Sobre Mí - Mario Molina | Diseñador y Constructor Civil</title>
     <meta name="description" content="Conoce la trayectoria profesional de Mario Molina con más de 30 años de experiencia en arquitectura, ingeniería y construcción.">
+
+
+
+
     
     <!-- Estilos CSS -->
     <style>
@@ -25,20 +29,36 @@
             --transition-speed: 0.3s;
         }
         
-        [data-theme="dark"] {
-            /* Modo oscuro - Estilo original */
-            --primary-color: #3498db;
-            --primary-dark: #2980b9;
-            --secondary-color: #2c3e50;
-            --accent-color: #3498db;
-            --text-color: #ecf0f1;
-            --text-light: #bdc3c7;
-            --bg-color: #1a1a1a;
-            --card-bg: #2c3e50;
-            --card-shadow: rgba(0, 0, 0, 0.3);
-            --nav-bg: #2c3e50;
-            --nav-text: #ecf0f1;
-        }
+      [data-theme="dark"] {
+    /* Modo oscuro - Estilo corregido */
+    --primary-color: #3498db;
+    --primary-dark: #2980b9;
+    --secondary-color: #5DADE2; /* Cambiado a un celeste más claro y visible */
+    --accent-color: #3498db;
+    --text-color: #ecf0f1;
+    --text-light: #bdc3c7;
+    --bg-color: #1a1a1a;
+    --card-bg: #2c3e50;
+    --card-shadow: rgba(0, 0, 0, 0.3);
+    --nav-bg: #2c3e50;
+    --nav-text: #ecf0f1;
+    }
+
+    /* Reglas específicas para títulos en modo oscuro */
+    [data-theme="dark"] h1,
+    [data-theme="dark"] h2,
+    [data-theme="dark"] h3,
+    [data-theme="dark"] h4,
+    [data-theme="dark"] h5,
+    [data-theme="dark"] h6 {
+    color: #5DADE2 !important; /* Color celeste para todos los títulos */
+    }
+
+    /* Asegurar contraste para títulos específicos */
+    [data-theme="dark"] .sobre-mi h2,
+    [data-theme="dark"] .sobre-mi h3 {
+    color: #5DADE2 !important;
+    }
         
         /* Reset y estilos básicos */
         * {
@@ -834,7 +854,7 @@
                         </svg>
                     </a>
                 </div>
-                <p class="copyright">© 2023 Mario Molina - Diseño y Construcción - Todos los derechos reservados – Buenos Aires, Argentina 🌎</p>
+                <p class="copyright">© 2023 Mario Molina. Todos los derechos reservados. Buenos Aires, Argentina.</p>
             </div>
         </div>
     </footer>
